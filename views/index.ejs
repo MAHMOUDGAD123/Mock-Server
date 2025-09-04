@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./node.svg" type="image/x-icon" />
+    <title>NODE - FASTIFY - VITE</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        user-select: none;
+        padding: 0;
+        margin: 0;
+        scrollbar-width: none;
+      }
+
+      html {
+        color-scheme: light dark;
+        color: light-dark(#000000, #ffffff);
+        background-color: light-dark(#eeeeee, #222222);
+        font-family: monospace;
+        font-weight: bold;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+        font-family: sans-serif;
+        font-weight: bolder;
+        height: 100dvh;
+        min-height: 300px;
+        min-width: 250px;
+        text-align: center;
+        padding: 10px;
+        overflow: auto;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        transition: filter 500ms;
+
+        &.has-shadow:hover {
+          filter: drop-shadow(0 0 90px var(--col));
+        }
+      }
+
+      h2 {
+        color: dodgerblue;
+        font-size: 2rem;
+        white-space: nowrap;
+        font-weight: bolder;
+      }
+
+      .fastify-img {
+        height: 200px;
+        filter: drop-shadow(0 0 0 100px dodgerblue);
+      }
+
+      .imgs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        & > * {
+          max-width: 150px;
+          min-width: 100px;
+        }
+      }
+
+      .techs {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.85rem;
+
+        & > * {
+          background-color: #1e90ff60;
+          padding: 7px 10px;
+          border-radius: 100px;
+          transition: background-color 300ms;
+
+          &:hover {
+            background-color: #1e90fff0;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://fastify.dev/" target="_blank">
+      <img
+        class="fastify-img has-shadow"
+        style="--col: #1e90ff"
+        src="./fastify.svg"
+        alt="fastify"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </a>
+
+    <div class="imgs">
+      <a href="https://nodejs.org/en" target="_blank">
+        <img
+          src="./nodejs.svg"
+          alt="nodejs"
+          class="has-shadow"
+          style="--col: #8ac74e"
+        />
+      </a>
+
+      <a href="https://vite.dev/" target="_blank">
+        <img
+          src="./vite.svg"
+          alt="vitejs"
+          class="has-shadow"
+          style="--col: #fcc723"
+        />
+      </a>
+    </div>
+
+    <h2>RESTful API</h2>
+
+    <div class="techs">
+      <span>NODEJS</span>
+      <span>VITEJS</span>
+      <span>FASTIFYJS</span>
+    </div>
+  </body>
+</html>

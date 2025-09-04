@@ -1,0 +1,59 @@
+{
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ESNext",
+    "importHelpers": true,
+    "baseUrl": "./",
+    "paths": {
+      "tslib": ["node_modules/tslib/tslib.d.ts"],
+      "@/*": ["src/*"]
+    },
+    "lib": ["esnext"],
+    "types": ["vite/client"],
+
+    /* Modules */
+    "rootDir": "./src",
+    "skipDefaultLibCheck": false,
+    "sourceMap": true,
+    "preserveWatchOutput": true,
+    "pretty": true,
+    "noErrorTruncation": true,
+
+    /* Emit */
+    "outDir": "./dist",
+    "removeComments": true,
+    "noEmitOnError": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    /*"allowJs": true, */
+
+    /* Type Checking & Linting */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "useDefineForClassFields": true,
+    "strictFunctionTypes": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true,
+
+    /* If NOT transpiling with TypeScript: */
+    /* esbuild & swc */
+    /* Bundler mode */
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "noEmit": true,
+    "moduleDetection": "force",
+
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true
+  }
+}
