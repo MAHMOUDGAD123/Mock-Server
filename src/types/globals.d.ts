@@ -8,7 +8,7 @@ declare namespace Database {
     id: number;
     title: string;
     body: string;
-  }
+  };
 
   type UserInfoType = {
     id: number;
@@ -32,7 +32,5 @@ declare namespace Database {
       catchPhrase: string;
       bs: string;
     };
-  }
-
-
+  };
 }
