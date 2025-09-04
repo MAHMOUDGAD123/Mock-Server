@@ -68,24 +68,24 @@ app.setNotFoundHandler((_req, _res) => {
 });
 
 if (MODE === "production") {
-  (async () => {
-    app.listen(
-      {
-        port: +process.env.PORT! || 3000,
-      },
-      (err, address) => {
-        if (err) {
-          app.log.error(err.message);
-          process.exit(1);
-        } else {
-          console.clear();
-          console.log(
-            `\x1b[30mfastify running at\x1b[39m [\x1b[36m\x1b[1m ${address} \x1b[39m]`
-          );
-        }
+  // (async () => {
+  app.listen(
+    {
+      port: +process.env.PORT! || 3000,
+    },
+    (err, address) => {
+      if (err) {
+        app.log.error(err.message);
+        process.exit(1);
+      } else {
+        console.clear();
+        console.log(
+          `\x1b[30mfastify running at\x1b[39m [\x1b[36m\x1b[1m ${address} \x1b[39m]`
+        );
       }
-    );
-  })();
+    }
+  );
+  // })();
 }
 
 export const viteNodeApp = app; // for vite-plugin-node
