@@ -20,16 +20,13 @@ import { usersRoutes } from "@/routes/users";
 import {
   CORS_OPTIONS,
   ENV_OPTIONS,
+  MODE,
   SESSION_OPTIONS,
 } from "./utils/configuration";
 import { postsRoutes } from "./routes/posts";
 import { productsRoutes } from "./routes/products";
 import { ordersRoutes } from "./routes/orders";
 import { companiesRoutes } from "./routes/companies";
-
-// ejs
-
-const MODE = import.meta.env.MODE as Globals.EnvironmentMode;
 
 const app: FastifyInstance = fastify({
   disableRequestLogging: true,
