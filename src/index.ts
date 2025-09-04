@@ -67,7 +67,7 @@ app.setNotFoundHandler((_req, _res) => {
   return _res.code(404).view("404", { pathname: _req.url });
 });
 
-if (MODE === 'production') {
+if (MODE === "production") {
   (async () => {
     app.listen(
       {
@@ -89,4 +89,16 @@ if (MODE === 'production') {
 }
 
 export const viteNodeApp = app; // for vite-plugin-node
-export default app; // for vercel deployment
+// export default app; // for vercel deployment
+
+// for vercel deployment
+export default function handler(req: any, res: any) {
+  app.ready((err) => {
+    if (err) {
+      res.statusCode = 500;
+      res.end("Server not ready");
+      return;
+    }
+    app.server.emit("request", req, res);
+  });
+}
