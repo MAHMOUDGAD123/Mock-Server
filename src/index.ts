@@ -23,6 +23,9 @@ import {
   SESSION_OPTIONS,
 } from "./utils/configuration";
 import { postsRoutes } from "./routes/posts";
+import { productsRoutes } from "./routes/products";
+import { ordersRoutes } from "./routes/orders";
+import { companiesRoutes } from "./routes/companies";
 
 // ejs
 
@@ -53,6 +56,9 @@ if (import.meta.env.DEV) {
 
 app.register(usersRoutes, { prefix: "/api/users" });
 app.register(postsRoutes, { prefix: "/api/posts" });
+app.register(productsRoutes, { prefix: "/api/products" });
+app.register(ordersRoutes, { prefix: "/api/orders" });
+app.register(companiesRoutes, { prefix: "/api/companies" });
 
 app.get("/", async (_req: FastifyRequest, _res: FastifyReply) => {
   return _res.view("index");

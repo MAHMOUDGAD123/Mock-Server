@@ -30,6 +30,10 @@ export const readPosts = () => {
   ) as Promise<Database.PostInfoType[]>;
 };
 
+export const readJsonFile = async (relativePath: string) => {
+  return JSON.parse(await fs.readFile(path.join(process.cwd(), relativePath), "utf-8"));
+};
+
 // Caching
 // =============================================================
 export const getCachedValue = async (
