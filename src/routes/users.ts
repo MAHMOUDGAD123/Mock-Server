@@ -30,7 +30,9 @@ export const usersRoutes = async (app: FastifyInstance) => {
       return;
     }
 
-    await waitFor(2000);
+    if (import.meta.env.DEV) {
+      await waitFor(2000);
+    }
 
     const users = await readLocalJsonFile("public/db/users.json");
     _res.send(users);
@@ -59,7 +61,9 @@ export const usersRoutes = async (app: FastifyInstance) => {
       return;
     }
 
-    await waitFor(2000);
+    if (import.meta.env.DEV) {
+      await waitFor(2000);
+    }
 
     const user = (
       (await readLocalJsonFile(
@@ -93,7 +97,9 @@ export const usersRoutes = async (app: FastifyInstance) => {
       return;
     }
 
-    await waitFor(2000);
+    if (import.meta.env.DEV) {
+      await waitFor(2000);
+    }
 
     const posts = (
       (await readLocalJsonFile(
@@ -142,7 +148,9 @@ export const usersRoutes = async (app: FastifyInstance) => {
 
       const actualPostId = (userId - 1) * 10 + postId;
 
-      await waitFor(2000);
+      if (import.meta.env.DEV) {
+        await waitFor(2000);
+      }
 
       const post = (
         (await readLocalJsonFile(

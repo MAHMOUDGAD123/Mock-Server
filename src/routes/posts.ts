@@ -2,7 +2,7 @@ import {
   getCachedValue,
   readLocalJsonFile,
   saveToCache,
-  waitFor
+  waitFor,
 } from "@/utils/tools";
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 // validation
@@ -30,7 +30,9 @@ export const postsRoutes = async (app: FastifyInstance) => {
       return;
     }
 
-    await waitFor(2000);
+    if (import.meta.env.DEV) {
+      await waitFor(2000);
+    }
 
     const posts = await readLocalJsonFile("public/db/posts.json");
     _res.send(posts);
@@ -59,7 +61,9 @@ export const postsRoutes = async (app: FastifyInstance) => {
       return;
     }
 
-    await waitFor(2000);
+    if (import.meta.env.DEV) {
+      await waitFor(2000);
+    }
 
     const post = (
       (await readLocalJsonFile(
