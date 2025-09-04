@@ -3,6 +3,8 @@ import type { FastifySessionOptions } from "@fastify/session";
 import type { FastifyEnvOptions } from "@fastify/env";
 import { randomBytes } from "crypto";
 
+export const MODE = import.meta.env.MODE as Globals.EnvironmentMode;
+
 export const COOKIE_SECRET = randomBytes(32).toString("hex");
 export const COOKIE_LIFE = 3 * 60 * 1000; // 3 minutes by default
 

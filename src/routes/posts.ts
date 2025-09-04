@@ -1,15 +1,10 @@
-import {
-  getCachedValue,
-  readLocalJsonFile,
-  saveToCache,
-  waitFor,
-} from "@/utils/tools";
+import { getCachedValue, readPosts, saveToCache, waitFor } from "@/utils/tools";
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 // validation
 import z from "zod";
 // caching
 import { createCache } from "cache-manager";
-import { CACHE } from "@/utils/configuration";
+import { CACHE, MODE } from "@/utils/configuration";
 
 const memCache = createCache({
   ttl: CACHE.TTL,
@@ -30,11 +25,11 @@ export const postsRoutes = async (app: FastifyInstance) => {
       return;
     }
 
-    if (import.meta.env.DEV) {
+    if (MODE === "development") {
       await waitFor(2000);
     }
 
-    const posts = await readLocalJsonFile("public/db/posts.json");
+    const posts = await readPosts();
     _res.send(posts);
     saveToCache(memCache, cacheKey, posts, _req);
   });
@@ -61,15 +56,11 @@ export const postsRoutes = async (app: FastifyInstance) => {
       return;
     }
 
-    if (import.meta.env.DEV) {
+    if (MODE === "development") {
       await waitFor(2000);
     }
 
-    const post = (
-      (await readLocalJsonFile(
-        "public/db/posts.json"
-      )) as Database.PostInfoType[]
-    ).find((post) => post.id === id);
+    const post = (await readPosts()).find((post) => post.id === id);
 
     _res.send(post);
     saveToCache(memCache, cacheKey, post, _req);

@@ -24,6 +24,8 @@ import {
 } from "./utils/configuration";
 import { postsRoutes } from "./routes/posts";
 
+// ejs
+
 const MODE = import.meta.env.MODE as Globals.EnvironmentMode;
 
 const app: FastifyInstance = fastify({
@@ -38,11 +40,11 @@ app.register(cors, CORS_OPTIONS);
 
 app.register(fastifyView, {
   engine: { ejs },
-  root: path.resolve(import.meta.dirname, "../views"),
+  root: path.join(process.cwd(), "views"),
 });
 
 app.register(fastifyStatic, {
-  root: path.resolve(import.meta.dirname, "../public"),
+  root: path.join(process.cwd(), "public"),
 });
 
 if (import.meta.env.DEV) {
@@ -71,7 +73,7 @@ if (MODE === "production") {
   (async () => {
     app.listen(
       {
-        port: +process.env.PORT! || 5555,
+        port: +process.env.PORT! || 3000,
       },
       (err, address) => {
         if (err) {

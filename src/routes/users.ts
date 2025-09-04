@@ -1,6 +1,7 @@
 import {
   getCachedValue,
-  readLocalJsonFile,
+  readPosts,
+  readUsers,
   saveToCache,
   waitFor,
 } from "@/utils/tools";
@@ -9,7 +10,7 @@ import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import z from "zod";
 // caching
 import { createCache } from "cache-manager";
-import { CACHE } from "@/utils/configuration";
+import { CACHE, MODE } from "@/utils/configuration";
 
 const memCache = createCache({
   ttl: CACHE.TTL,
@@ -30,11 +31,11 @@ export const usersRoutes = async (app: FastifyInstance) => {
       return;
     }
 
-    if (import.meta.env.DEV) {
+    if (MODE === "development") {
       await waitFor(2000);
     }
 
-    const users = await readLocalJsonFile("public/db/users.json");
+    const users = await readUsers();
     _res.send(users);
     saveToCache(memCache, cacheKey, users, _req);
   });
@@ -61,15 +62,11 @@ export const usersRoutes = async (app: FastifyInstance) => {
       return;
     }
 
-    if (import.meta.env.DEV) {
+    if (MODE === "development") {
       await waitFor(2000);
     }
 
-    const user = (
-      (await readLocalJsonFile(
-        "public/db/users.json"
-      )) as Database.UserInfoType[]
-    ).find((user) => user.id === id);
+    const user = (await readUsers()).find((user) => user.id === id);
 
     _res.send(user);
     saveToCache(memCache, cacheKey, user, _req);
@@ -97,15 +94,11 @@ export const usersRoutes = async (app: FastifyInstance) => {
       return;
     }
 
-    if (import.meta.env.DEV) {
+    if (MODE === "development") {
       await waitFor(2000);
     }
 
-    const posts = (
-      (await readLocalJsonFile(
-        "public/db/posts.json"
-      )) as Database.PostInfoType[]
-    ).filter((post) => post.userId === id);
+    const posts = (await readPosts()).filter((post) => post.userId === id);
 
     _res.send(posts);
     saveToCache(memCache, cacheKey, posts, _req);
@@ -148,15 +141,11 @@ export const usersRoutes = async (app: FastifyInstance) => {
 
       const actualPostId = (userId - 1) * 10 + postId;
 
-      if (import.meta.env.DEV) {
+      if (MODE === "development") {
         await waitFor(2000);
       }
 
-      const post = (
-        (await readLocalJsonFile(
-          "public/db/posts.json"
-        )) as Database.PostInfoType[]
-      ).find((post) => post.id === actualPostId);
+      const post = (await readPosts()).find((post) => post.id === actualPostId);
 
       _res.send(post);
       saveToCache(memCache, cacheKey, post, _req);

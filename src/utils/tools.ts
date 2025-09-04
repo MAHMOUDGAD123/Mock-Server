@@ -1,7 +1,8 @@
 import type { Cache } from "cache-manager";
 import { PINO_CONFIG } from "./pino-config";
 import type { FastifyRequest } from "fastify";
-import fs from "fs";
+import { promises as fs } from "fs";
+import path from "path";
 
 export const getPinoConfig = (mode: "development" | "production") => {
   return PINO_CONFIG[mode];
@@ -15,7 +16,18 @@ export const waitFor = (ms: number) => {
 };
 
 export const readLocalJsonFile = async (path: string) => {
-  return JSON.parse(fs.readFileSync(path).toString());
+  return JSON.parse(await fs.readFile(path, "utf-8"));
+};
+
+export const readUsers = () => {
+  return readLocalJsonFile(
+    path.join(process.cwd(), "public/db/users.json")
+  ) as Promise<Database.UserInfoType[]>;
+};
+export const readPosts = () => {
+  return readLocalJsonFile(
+    path.join(process.cwd(), "public/db/posts.json")
+  ) as Promise<Database.PostInfoType[]>;
 };
 
 // Caching
