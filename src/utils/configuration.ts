@@ -28,17 +28,6 @@ export const CORS_OPTIONS: FastifyCorsOptions = {
   optionsSuccessStatus: 200,
 };
 
-const CACHE_TTL = 60 * 1000; // 1 minutes by default
-
-export const CACHE: { TTL: number; refreshThreshold: () => number } = {
-  TTL: CACHE_TTL,
-  refreshThreshold: () => {
-    // to update the cache 10 seconds before outdated
-    const threshold = 10000;
-    return CACHE_TTL - threshold < 0 ? 0 : threshold;
-  },
-};
-
 export const ENV_OPTIONS: FastifyEnvOptions = {
   confKey: "env", // Access variables via `app.config`
   dotenv: true, // Load from `.env` file automatically

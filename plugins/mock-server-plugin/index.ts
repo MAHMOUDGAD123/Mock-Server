@@ -340,8 +340,10 @@ const logInfo = (...optionalParams: any[]) => {
 
   console.clear();
   console.info(
-    time,
-    "\x1b[36m\x1b[1m[vite-update]\x1b[0m\x1b[0m",
+    `\x1b[90m\x1b[1m${time}\x1b[0m`,
+    "\x1b[36m\x1b[1m[vite]\x1b[0m",
+    "\x1b[30m\x1b[2m(server)\x1b[0m",
+    "\x1b[1m\x1b[32mreload\x1b[0m",
     "[",
     `\x1b[90m${newModuleName}\x1b[0m`,
     "]",
@@ -366,8 +368,10 @@ const logErr = (...optionalParams: any[]) => {
   const time = `\x1b[90m${new Date().toLocaleTimeString("en-US")}\x1b[0m`;
   console.clear();
   console.error(
-    time,
-    "\x1b[31m\x1b[1m[vite-error]\x1b[0m\x1b[0m",
+    `\x1b[90m\x1b[1m${time}\x1b[0m`,
+    "\x1b[31m\x1b[1m[vite]\x1b[0m",
+    "\x1b[30m\x1b[2m(server)\x1b[0m",
+    "\x1b[33m\x1b[1merror\x1b[0m",
     "[\x1b[90m",
     optionalParams.join(" - "),
     "\x1b[0m]"

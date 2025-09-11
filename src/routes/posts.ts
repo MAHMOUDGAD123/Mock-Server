@@ -1,15 +1,10 @@
-import { getCachedValue, readPosts, saveToCache, waitFor } from "@/utils/tools";
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
+import { getCachedValue, readPosts, saveToCache, waitFor } from "@/utils/tools";
+import { MODE } from "@/utils/configuration";
 // validation
 import z from "zod";
 // caching
-import { createCache } from "cache-manager";
-import { CACHE, MODE } from "@/utils/configuration";
-
-const memCache = createCache({
-  ttl: CACHE.TTL,
-  refreshThreshold: CACHE.refreshThreshold(),
-});
+import { memCache } from "@/utils/cache";
 
 export const postsRoutes = async (app: FastifyInstance) => {
   app.get("/", async (_req: FastifyRequest, _res: FastifyReply) => {

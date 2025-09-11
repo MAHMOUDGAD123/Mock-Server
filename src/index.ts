@@ -24,6 +24,7 @@ import {
   SESSION_OPTIONS,
 } from "./utils/configuration";
 import { postsRoutes } from "./routes/posts";
+import { youtubeRoutes } from "./routes/youtubei";
 
 const app: FastifyInstance = fastify({
   disableRequestLogging: true,
@@ -50,6 +51,7 @@ if (import.meta.env.DEV) {
 
 app.register(usersRoutes, { prefix: "/api/users" });
 app.register(postsRoutes, { prefix: "/api/posts" });
+app.register(youtubeRoutes, { prefix: "/api/youtube" });
 
 app.get("/", async (_req: FastifyRequest, _res: FastifyReply) => {
   return _res.view("index");
@@ -66,26 +68,26 @@ app.setNotFoundHandler((_req, _res) => {
   return _res.code(404).view("404", { pathname: _req.url });
 });
 
-// if (MODE === "production") {
-//   (async () => {
-//     app.listen(
-//       {
-//         port: +process.env.PORT! || 3000,
-//       },
-//       (err, address) => {
-//         if (err) {
-//           app.log.error(err.message);
-//           process.exit(1);
-//         } else {
-//           console.clear();
-//           console.log(
-//             `\x1b[30mfastify running at\x1b[39m [\x1b[36m\x1b[1m ${address} \x1b[39m]`
-//           );
-//         }
-//       }
-//     );
-//   })();
-// }
+if (MODE === "production") {
+  (async () => {
+    app.listen(
+      {
+        port: +process.env.PORT! || 3000,
+      },
+      (err, address) => {
+        if (err) {
+          app.log.error(err.message);
+          process.exit(1);
+        } else {
+          console.clear();
+          console.log(
+            `\x1b[30mfastify running at\x1b[39m [\x1b[36m\x1b[1m ${address} \x1b[39m]`
+          );
+        }
+      }
+    );
+  })();
+}
 
 export const viteNodeApp = app; // for vite-plugin-node
 // export default app; // for vercel deployment
