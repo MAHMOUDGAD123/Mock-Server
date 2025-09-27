@@ -14,17 +14,19 @@ import fastifyEnv from "@fastify/env";
 import ejs from "ejs";
 import path from "path";
 // local imports
-import { getPinoConfig } from "@/utils/tools";
+import { getPinoConfig } from "@/utils/pino-config";
 import { loggerHooks } from "@/hooks/logger";
-import { usersRoutes } from "@/routes/users";
 import {
   CORS_OPTIONS,
   ENV_OPTIONS,
   MODE,
   SESSION_OPTIONS,
-} from "./utils/configuration";
-import { postsRoutes } from "./routes/posts";
-import { youtubeRoutes } from "./routes/youtubei";
+} from "@/utils/configuration";
+// routes
+import { usersRoutes } from "@/routes/users";
+import { postsRoutes } from "@/routes/posts";
+import { youtubeRoutes } from "@/routes/youtubei";
+import { cacheHooks } from "@/hooks/cache";
 
 const app: FastifyInstance = fastify({
   disableRequestLogging: true,
@@ -49,6 +51,7 @@ if (import.meta.env.DEV) {
   app.register(loggerHooks);
 }
 
+app.register(cacheHooks);
 app.register(usersRoutes, { prefix: "/api/users" });
 app.register(postsRoutes, { prefix: "/api/posts" });
 app.register(youtubeRoutes, { prefix: "/api/youtube" });
@@ -68,7 +71,7 @@ app.setNotFoundHandler((_req, _res) => {
   return _res.code(404).view("404", { pathname: _req.url });
 });
 
-if (MODE === "production") {
+if (import.meta.env.PROD) {
   (async () => {
     app.listen(
       {

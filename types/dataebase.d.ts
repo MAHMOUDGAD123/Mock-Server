@@ -1,7 +1,3 @@
-declare namespace Globals {
-  type EnvironmentMode = "development" | "production";
-}
-
 declare namespace Database {
   type PostInfoType = {
     userId: number;

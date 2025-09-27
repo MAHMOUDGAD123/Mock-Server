@@ -20,6 +20,8 @@ export const vitePluginNode = () =>
     // if you want to init your app on boot, set this to true
     initAppOnBoot: false,
 
+    // Optional, default: false
+    // if you want to reload your app on file changes, set this to true, rebounce delay is 500ms
     reloadAppOnFileChange: true,
 
     // Optional, default: 'esbuild'

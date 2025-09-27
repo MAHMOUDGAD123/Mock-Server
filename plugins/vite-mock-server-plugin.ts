@@ -1,4 +1,4 @@
-import mockServer from "./mock-server-plugin/index";
+import mockServer from "./mock-server-plugin";
 
 export const viteMockServerPlugin = () =>
   mockServer({

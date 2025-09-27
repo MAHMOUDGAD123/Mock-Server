@@ -35,3 +35,7 @@ export const PINO_CONFIG = {
     | (FastifyLoggerOptions<RawServerDefault> & PinoLoggerOptions);
   production: boolean;
 };
+
+export const getPinoConfig = (mode: "development" | "production") => {
+  return PINO_CONFIG[mode];
+};
