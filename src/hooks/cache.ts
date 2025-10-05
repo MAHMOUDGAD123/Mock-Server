@@ -24,7 +24,7 @@ export const cacheHooks = fp((app: FastifyInstance) => {
     const cachedValue = await getCachedValue(memCache, cacheKey);
     if (cachedValue) {
       // short‑circuit response if cached
-      _res.send(cachedValue);
+      _res.type('application/json').send(cachedValue);
       _req.log.info(`${cacheKey} \x1b[32m\x1b[1m[Served From Cache]`);
       return;
     }
