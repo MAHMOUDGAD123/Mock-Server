@@ -1,17 +1,16 @@
 {
-  "include": ["src/**/*", "types/**/*"],
+  "include": ["src/**/*", "types/**/*", "env.d.ts"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     /* Language and Environment */
     "target": "ESNext",
     "importHelpers": true,
-    "baseUrl": "./",
     "paths": {
-      "tslib": ["node_modules/tslib/tslib.d.ts"],
-      "@/*": ["src/*"]
+      "tslib": ["./node_modules/tslib/tslib.d.ts"],
+      "@/*": ["./src/*"]
     },
     "lib": ["esnext", "DOM"],
-    "types": ["vite/client"],
+    "types": ["node", "vite/client"],
 
     /* Modules */
     "rootDir": ".",
