@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*", "types/**/*", "env.d.ts"],
+  "include": ["src/**/*", "types/**/*", "env.d.ts", "plugins/**/*"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     /* Language and Environment */

@@ -4,6 +4,7 @@ import { defineConfig, type UserConfig } from "vite";
 import { vitePluginNode } from "./plugins/vite-plugin-node";
 import { viteMockServerPlugin } from "./plugins/vite-mock-server-plugin";
 import { removeConsolePlugin } from "./plugins/vite-plugin-remove-console";
+import { restartServerOnChange } from "./plugins/vite-dev-server-restart";
 
 const PORT = 3000;
 
@@ -34,13 +35,17 @@ export default defineConfig({
     port: PORT,
     host: true,
     proxy: {
-      '*/api': `http://localhost:${PORT}`,
-    }
+      "*/api": `http://localhost:${PORT}`,
+    },
   },
   plugins: [
     ...vitePluginNode(),
     viteMockServerPlugin(),
     tsconfigPaths(),
     removeConsolePlugin(),
+    restartServerOnChange([
+      path.resolve("vite.config.ts"),
+      path.resolve("plugins"),
+    ]),
   ],
 } satisfies UserConfig);

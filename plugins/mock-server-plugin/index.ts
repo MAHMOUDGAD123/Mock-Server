@@ -1,4 +1,10 @@
-import { type Plugin, type ViteDevServer, Connect } from "vite";
+import {
+  type Plugin,
+  type ViteDevServer,
+  type Connect,
+  createLogger,
+  type LogOptions,
+} from "vite";
 import * as http from "http";
 import AntPathMatcher from "@howiefh/ant-path-matcher";
 import chokidar from "chokidar";
@@ -10,6 +16,10 @@ const PLUGIN_NAME = "vite-plugin-mock-server";
 const TEMPORARY_FILE_SUFFIX = ".tmp.cjs";
 let LOG_LEVEL = "error";
 const requireCache = new Map<string, any>();
+const logger = createLogger("info", {
+  allowClearScreen: true,
+});
+const loggerOptions: LogOptions = { clear: true, timestamp: true };
 
 type Request = Connect.IncomingMessage & {
   body?: any;
@@ -75,11 +85,15 @@ export default (options?: MockOptions): Plugin => {
           ? true
           : options.printStartupLog;
       if (options.mockModules && options.mockModules.length > 0) {
-        console.warn(
-          "[" +
-            PLUGIN_NAME +
-            "] mock modules will be set automatically, and the configuration will be ignored",
-          options.mockModules
+        logger.warn(
+          [
+            "[",
+            PLUGIN_NAME,
+            "] mock modules will be set automatically, and the configuration will be ignored [",
+            options.mockModules.join(" - "),
+            "]",
+          ].join(""),
+          loggerOptions
         );
       }
       options.mockModules = [];
@@ -87,10 +101,11 @@ export default (options?: MockOptions): Plugin => {
       // watch mock files
       watchMockFiles(options).then(() => {
         if (options?.printStartupLog) {
-          console.log(
-            "[" + PLUGIN_NAME + "] mock server started. options =",
-            options
+          logger.info(
+            "[" + PLUGIN_NAME + "] mock server started. options = ",
+            loggerOptions
           );
+          console.log(options);
         }
       });
       if (options.middlewares) {
@@ -335,19 +350,15 @@ const logInfo = (...optionalParams: any[]) => {
   }
 
   newModuleName = newModuleName ?? optionalParams.join(" - ");
-  const count = counter > 1 ? `\x1b[33m(x${counter})\x1b[0m` : "";
-  const time = `\x1b[90m${new Date().toLocaleTimeString("en-US")}\x1b[0m`;
-
-  console.clear();
-  console.info(
-    `\x1b[90m\x1b[1m${time}\x1b[0m`,
-    "\x1b[36m\x1b[1m[vite]\x1b[0m",
-    "\x1b[30m\x1b[2m(server)\x1b[0m",
-    "\x1b[1m\x1b[32mreload\x1b[0m",
-    "[",
-    `\x1b[90m${newModuleName}\x1b[0m`,
-    "]",
-    count
+  logger.info(
+    [
+      "\x1b[30m\x1b[2m(server)\x1b[0m",
+      "\x1b[1m\x1b[32mreload\x1b[0m",
+      "[",
+      `\x1b[90m${newModuleName}\x1b[0m`,
+      "]",
+    ].join(" "),
+    loggerOptions
   );
 };
 
@@ -365,15 +376,14 @@ const parseQueryString = (qs: string): { [key: string]: string } =>
 const logErr = (...optionalParams: any[]) => {
   if (LOG_LEVEL === "off") return;
 
-  const time = `\x1b[90m${new Date().toLocaleTimeString("en-US")}\x1b[0m`;
-  console.clear();
-  console.error(
-    `\x1b[90m\x1b[1m${time}\x1b[0m`,
-    "\x1b[31m\x1b[1m[vite]\x1b[0m",
-    "\x1b[30m\x1b[2m(server)\x1b[0m",
-    "\x1b[33m\x1b[1merror\x1b[0m",
-    "[\x1b[90m",
-    optionalParams.join(" - "),
-    "\x1b[0m]"
+  logger.error(
+    [
+      "\x1b[30m\x1b[2m(server)\x1b[0m",
+      "\x1b[33m\x1b[1merror\x1b[0m",
+      "[\x1b[90m",
+      optionalParams.join(" - "),
+      "\x1b[0m]",
+    ].join(" "),
+    loggerOptions
   );
 };
