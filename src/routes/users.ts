@@ -46,6 +46,7 @@ export const usersRoutes = async (app: FastifyInstance) => {
       if (!user) {
         throw new Error("User not found");
       }
+      _req.log.info("💀💀");
       return _res.send(user);
     },
   );
