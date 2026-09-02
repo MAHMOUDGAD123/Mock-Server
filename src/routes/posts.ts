@@ -1,9 +1,11 @@
 import type { FastifyInstance } from "fastify";
 import { readPosts } from "@/utils/tools";
-// validation
+import { cacheHooks } from "@/hooks/cache";
 import z from "zod";
 
 export const postsRoutes = async (app: FastifyInstance) => {
+  app.register(cacheHooks);
+
   app.get<{
     Reply: Database.PostInfoType[];
   }>(
@@ -12,7 +14,7 @@ export const postsRoutes = async (app: FastifyInstance) => {
     async (_req, _res) => {
       const posts = await readPosts();
       return _res.send(posts);
-    }
+    },
   );
 
   app.get<{
@@ -32,7 +34,9 @@ export const postsRoutes = async (app: FastifyInstance) => {
     async (_req, _res) => {
       const id = +_req.params.id;
 
-      _req.log.info(`postId: ${id}`);
+      if (import.meta.env.DEV) {
+        _req.log.info(`postId: ${id}`);
+      }
 
       const validationResult = z.number().min(1).max(100).safeParse(id);
 
@@ -42,6 +46,6 @@ export const postsRoutes = async (app: FastifyInstance) => {
 
       const post = (await readPosts()).find((post) => post.id === id);
       return _res.send(post);
-    }
+    },
   );
 };

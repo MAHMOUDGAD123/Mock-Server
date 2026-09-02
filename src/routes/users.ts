@@ -1,9 +1,11 @@
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { readPosts, readUsers } from "@/utils/tools";
-// validation
+import { cacheHooks } from "@/hooks/cache";
 import z from "zod";
 
 export const usersRoutes = async (app: FastifyInstance) => {
+  app.register(cacheHooks);
+
   app.get<{
     Reply: Database.UserInfoType[];
   }>(
@@ -12,7 +14,7 @@ export const usersRoutes = async (app: FastifyInstance) => {
     async (_req: FastifyRequest, _res: FastifyReply) => {
       const users = await readUsers();
       return _res.send(users);
-    }
+    },
   );
 
   app.get<{
@@ -30,7 +32,9 @@ export const usersRoutes = async (app: FastifyInstance) => {
     async (_req, _res) => {
       const id = +_req.params.id;
 
-      _req.log.info(`userId: ${id}`);
+      if (import.meta.env.DEV) {
+        _req.log.info(`userId: ${id}`);
+      }
 
       const validationResult = z.number().min(1).max(10).safeParse(id);
 
@@ -39,8 +43,11 @@ export const usersRoutes = async (app: FastifyInstance) => {
       }
 
       const user = (await readUsers()).find((user) => user.id === id);
+      if (!user) {
+        throw new Error("User not found");
+      }
       return _res.send(user);
-    }
+    },
   );
 
   app.get<{
@@ -58,7 +65,9 @@ export const usersRoutes = async (app: FastifyInstance) => {
     async (_req, _res) => {
       const id = +_req.params.id;
 
-      _req.log.info(`userId: ${id}`);
+      if (import.meta.env.DEV) {
+        _req.log.info(`userId: ${id}`);
+      }
 
       const validationResult = z.number().min(1).max(10).safeParse(id);
 
@@ -68,7 +77,7 @@ export const usersRoutes = async (app: FastifyInstance) => {
 
       const posts = (await readPosts()).filter((post) => post.userId === id);
       return _res.send(posts);
-    }
+    },
   );
 
   app.get<{
@@ -91,7 +100,9 @@ export const usersRoutes = async (app: FastifyInstance) => {
       const userId = +ids.userId;
       const postId = +ids.postId;
 
-      _req.log.info(`userId: ${userId} - postId: ${postId}`);
+      if (import.meta.env.DEV) {
+        _req.log.info(`userId: ${userId} - postId: ${postId}`);
+      }
 
       const { userIdValidation, postIdValidation } = {
         userIdValidation: z.number().min(1).max(10).safeParse(userId),
@@ -111,7 +122,10 @@ export const usersRoutes = async (app: FastifyInstance) => {
       const actualPostId = (userId - 1) * 10 + postId;
 
       const post = (await readPosts()).find((post) => post.id === actualPostId);
+      if (!post) {
+        throw new Error("Post not found");
+      }
       return _res.send(post);
-    }
+    },
   );
 };

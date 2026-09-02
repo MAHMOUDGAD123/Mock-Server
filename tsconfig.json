@@ -1,5 +1,12 @@
 {
-  "include": ["src/**/*", "types/**/*", "env.d.ts", "plugins/**/*"],
+  "include": [
+    "src/**/*",
+    "types/**/*",
+    "env.d.ts",
+    "plugins/**/*",
+    "tools/*",
+    "vite.config.ts"
+  ],
   "exclude": ["node_modules"],
   "compilerOptions": {
     /* Language and Environment */
@@ -7,7 +14,8 @@
     "importHelpers": true,
     "paths": {
       "tslib": ["./node_modules/tslib/tslib.d.ts"],
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
     },
     "lib": ["esnext", "DOM"],
     "types": ["node", "vite/client"],

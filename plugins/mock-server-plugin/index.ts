@@ -7,7 +7,7 @@ import {
 } from "vite";
 import * as http from "http";
 import AntPathMatcher from "@howiefh/ant-path-matcher";
-import chokidar from "chokidar";
+import chokidar, { type FSWatcher } from "chokidar";
 import path from "path";
 import fs from "fs";
 import { build } from "esbuild";
@@ -34,14 +34,14 @@ export type MockFunction = {
     req: Request,
     res: http.ServerResponse,
     /** @deprecated in 2.0, use req.params **/
-    urlVars?: { [key: string]: string }
+    urlVars?: { [key: string]: string },
   ): void;
 };
 
 export type MockLayer = (
   req: Request,
   res: http.ServerResponse,
-  next: Connect.NextFunction
+  next: Connect.NextFunction,
 ) => void;
 
 export type MockHandler = {
@@ -62,28 +62,32 @@ export type MockOptions = {
   printStartupLog?: boolean;
 };
 
+let activeMockWatcher: FSWatcher | undefined;
+
 export default (options?: MockOptions): Plugin => {
   return {
     name: PLUGIN_NAME,
+
     configureServer: async (server: ViteDevServer) => {
-      // build url matcher
       const matcher = new AntPathMatcher();
-      // init options
+
       options = options || {};
       options.logLevel = options.logLevel || "error";
       options.urlPrefixes = options.urlPrefixes || ["/api/"];
       options.mockRootDir = options.mockRootDir || "./mock";
       options.mockJsSuffix = options.mockJsSuffix || ".mock.js";
       options.mockTsSuffix = options.mockTsSuffix || ".mock.ts";
-      // console.log(typeof options.printStartupLog);
+
       options.noHandlerResponse404 =
         typeof options.noHandlerResponse404 !== "boolean"
           ? true
           : options.noHandlerResponse404;
+
       options.printStartupLog =
         typeof options.printStartupLog !== "boolean"
           ? true
           : options.printStartupLog;
+
       if (options.mockModules && options.mockModules.length > 0) {
         logger.warn(
           [
@@ -92,28 +96,66 @@ export default (options?: MockOptions): Plugin => {
             "] mock modules will be set automatically, and the configuration will be ignored [",
             options.mockModules.join(" - "),
             "]",
-          ].join(""),
-          loggerOptions
+          ].join(" "),
+          loggerOptions,
         );
       }
+
       options.mockModules = [];
       LOG_LEVEL = options.logLevel;
-      // watch mock files
-      watchMockFiles(options).then(() => {
-        if (options?.printStartupLog) {
-          logger.info(
-            "[" + PLUGIN_NAME + "] mock server started. options = ",
-            loggerOptions
-          );
-          console.log(options);
+
+      // IMPORTANT:
+      // Close previous watcher if one is still alive.
+      await activeMockWatcher?.close().catch(() => {});
+      activeMockWatcher = undefined;
+
+      // Create a new watcher.
+      const mockWatcher = await watchMockFiles(options);
+      activeMockWatcher = mockWatcher;
+
+      if (options?.printStartupLog) {
+        logger.info(
+          "[" + PLUGIN_NAME + "] mock server started. options = ",
+          loggerOptions,
+        );
+        console.log(options);
+      }
+
+      // IMPORTANT:
+      // Cleanup when Vite dev server closes/restarts.
+      let disposed = false;
+
+      const disposeMockWatcher = () => {
+        if (disposed) return;
+        disposed = true;
+
+        if (activeMockWatcher === mockWatcher) {
+          activeMockWatcher = undefined;
         }
-      });
+
+        mockWatcher.close().catch(() => {});
+      };
+
+      server.httpServer?.once("close", disposeMockWatcher);
+
+      // Extra safety for restart implementations that may not emit close quickly.
+      const anyServer = server as any;
+      const originalClose = anyServer.close?.bind(server);
+
+      if (originalClose) {
+        anyServer.close = async () => {
+          disposeMockWatcher();
+          return originalClose();
+        };
+      }
+
       if (options.middlewares) {
         for (const [, layer] of options.middlewares.entries()) {
           server.middlewares.use((req, res, next) => {
             const hasMatch = options?.urlPrefixes?.some((prefix) =>
-              req.url?.startsWith(prefix)
+              req.url?.startsWith(prefix),
             );
+
             if (hasMatch) {
               layer(req, res, next);
             } else {
@@ -122,14 +164,15 @@ export default (options?: MockOptions): Plugin => {
           });
         }
       }
+
       server.middlewares.use(
         (
           req: Connect.IncomingMessage,
           res: http.ServerResponse,
-          next: Connect.NextFunction
+          next: Connect.NextFunction,
         ) => {
           doHandle(options!, matcher, req, res, next);
-        }
+        },
       );
     },
   };
@@ -150,7 +193,7 @@ const doHandle = async (
   matcher: AntPathMatcher,
   req: Request,
   res: http.ServerResponse,
-  next: Connect.NextFunction
+  next: Connect.NextFunction,
 ) => {
   for (const [, prefix] of options?.urlPrefixes!?.entries()) {
     if (!req?.url?.startsWith(prefix)) continue;
@@ -186,7 +229,7 @@ const doHandle = async (
             "matched and call mock handler",
             handler,
             "pathVars",
-            pathVars
+            pathVars,
           );
           req.params = pathVars;
           req.query = parseQueryString(qs!);
@@ -205,7 +248,7 @@ const doHandle = async (
           url +
           '", method: "' +
           method +
-          '" }'
+          '" }',
       );
       return;
     }
@@ -213,38 +256,48 @@ const doHandle = async (
   next();
 };
 
-const watchMockFiles = async (options: MockOptions) => {
+const watchMockFiles = async (options: MockOptions): Promise<FSWatcher> => {
   const watchDir = path.resolve(process.cwd(), options?.mockRootDir!);
-  // logInfo("watched root dir is", watchDir);
+
   await loadMockModules(options, watchDir);
-  chokidar
-    .watch(watchDir, {
-      ignoreInitial: true,
-    })
-    .on("all", async (event, path) => {
-      if (path.endsWith(TEMPORARY_FILE_SUFFIX)) return;
-      logInfo("event", event, "path", path);
-      if (event === "addDir") return;
-      if (event === "unlinkDir") {
-        for (const modName of [...requireCache.keys()]) {
-          if (modName.startsWith(watchDir)) {
-            await deleteMockModule(options, modName);
-          }
+
+  const watcher = chokidar.watch(watchDir, {
+    ignoreInitial: true,
+  });
+
+  watcher.on("all", async (event, filePath) => {
+    if (filePath.endsWith(TEMPORARY_FILE_SUFFIX)) return;
+
+    logInfo("event", event, "path", filePath);
+
+    if (event === "addDir") return;
+
+    if (event === "unlinkDir") {
+      for (const modName of [...requireCache.keys()]) {
+        if (modName.startsWith(watchDir)) {
+          await deleteMockModule(options, modName);
         }
-        await loadMockModules(options, watchDir);
-        return;
       }
-      if (
-        !path.endsWith(options?.mockJsSuffix!) &&
-        !path.endsWith(options?.mockTsSuffix!)
-      )
-        return;
-      if (event === "add" || event === "change") {
-        await loadMockModule(options, path);
-      } else if (event === "unlink") {
-        await deleteMockModule(options, path);
-      }
-    });
+
+      await loadMockModules(options, watchDir);
+      return;
+    }
+
+    if (
+      !filePath.endsWith(options?.mockJsSuffix!) &&
+      !filePath.endsWith(options?.mockTsSuffix!)
+    ) {
+      return;
+    }
+
+    if (event === "add" || event === "change") {
+      await loadMockModule(options, filePath);
+    } else if (event === "unlink") {
+      await deleteMockModule(options, filePath);
+    }
+  });
+
+  return watcher;
 };
 
 const loadMockModules = async (options: MockOptions, watchDir: string) => {
@@ -273,7 +326,7 @@ const loadMockModule = async (options: MockOptions, moduleName: string) => {
 const loadJsMockModule = async (
   options: MockOptions,
   moduleName: string,
-  skipCheck?: boolean
+  skipCheck?: boolean,
 ) => {
   if (!skipCheck) {
     if (!moduleName.endsWith(options?.mockJsSuffix!)) return;
@@ -358,7 +411,7 @@ const logInfo = (...optionalParams: any[]) => {
       `\x1b[90m${newModuleName}\x1b[0m`,
       "]",
     ].join(" "),
-    loggerOptions
+    loggerOptions,
   );
 };
 
@@ -384,6 +437,6 @@ const logErr = (...optionalParams: any[]) => {
       optionalParams.join(" - "),
       "\x1b[0m]",
     ].join(" "),
-    loggerOptions
+    loggerOptions,
   );
 };

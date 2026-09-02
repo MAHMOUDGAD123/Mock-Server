@@ -1,6 +1,6 @@
 import { createCache, type Cache } from "cache-manager";
 
-const CACHE_TTL = 60 * 1000; // 1 minutes by default
+const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hr
 
 const threshold = () => {
   // to update the cache 10 seconds before outdated
@@ -13,8 +13,11 @@ export const memCache = createCache({
   refreshThreshold: threshold(),
 });
 
-export const getCachedValue = async (memCache: Cache, cacheKey: string) => {
-  const cachedValue = await memCache.get(cacheKey);
+export const getCachedValue = async <T = unknown>(
+  memCache: Cache,
+  cacheKey: CacheKeys,
+) => {
+  const cachedValue = await memCache.get<T>(cacheKey);
 
   if (cachedValue) {
     return cachedValue;
@@ -22,10 +25,11 @@ export const getCachedValue = async (memCache: Cache, cacheKey: string) => {
   return null;
 };
 
-export const saveToCache = async (
+export const saveToCache = async <T = unknown>(
   memCache: Cache,
-  cacheKey: string,
-  dataToSave: unknown
+  cacheKey: CacheKeys,
+  dataToSave: T,
+  ttl?: number,
 ) => {
-  memCache.set(cacheKey, dataToSave);
+  memCache.set<T>(cacheKey, dataToSave, ttl);
 };

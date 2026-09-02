@@ -3,7 +3,7 @@ import mockServer from "./mock-server-plugin";
 export const viteMockServerPlugin = () =>
   mockServer({
     logLevel: "info",
-    urlPrefixes: ["*/api/"],
+    urlPrefixes: ["/api/"],
     mockRootDir: "./src",
     mockJsSuffix: "*.js",
     mockTsSuffix: "*.ts",

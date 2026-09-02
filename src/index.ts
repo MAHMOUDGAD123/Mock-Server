@@ -1,93 +1,95 @@
-// fastify ecosystem imports
-import fastify, {
-  type FastifyInstance,
-  type FastifyReply,
-  type FastifyRequest,
-} from "fastify";
+// --- Fastify ecosystem imports ---
+import fastify, { LogController, type FastifyInstance } from "fastify";
 import fastifyStatic from "@fastify/static";
 import fastifyView from "@fastify/view";
 import cors from "@fastify/cors";
 import fastifyCookie from "@fastify/cookie";
-import fastifySession from "@fastify/session"; // you can use @fastify/secure-session for Encrypted Session Storage
+import { fastifySecureSession } from "@fastify/secure-session"; // you can use @fastify/secure-session for Encrypted Session Storage
 import fastifyEnv from "@fastify/env";
-// other imports
+// --- Other imports ---
 import ejs from "ejs";
 import path from "path";
-// local imports
+// --- Local imports ---
 import { getPinoConfig } from "@/utils/pino-config";
-import { loggerHooks } from "@/hooks/logger";
 import {
   CORS_OPTIONS,
   ENV_OPTIONS,
   MODE,
   SESSION_OPTIONS,
-} from "@/utils/configuration";
-// routes
-import { usersRoutes } from "@/routes/users";
-import { postsRoutes } from "@/routes/posts";
-import { youtubeRoutes } from "@/routes/youtubei";
-import { cacheHooks } from "@/hooks/cache";
+} from "@/utils/config";
+// --- Routes imports ---
+import { appRoutes } from "@/routes";
+
+const logController = new LogController({
+  disableRequestLogging: true,
+});
 
 const app: FastifyInstance = fastify({
-  disableRequestLogging: true,
+  logController,
   logger: getPinoConfig(MODE),
+  trustProxy: true,
 });
 
+// Register fastify env first
 app.register(fastifyEnv, ENV_OPTIONS);
-app.register(fastifyCookie);
-app.register(fastifySession, SESSION_OPTIONS);
-app.register(cors, CORS_OPTIONS);
 
-app.register(fastifyView, {
-  engine: { ejs },
-  root: path.join(process.cwd(), "views"),
-});
+// --- Config registration ---
+app.after(() => {
+  app.register(fastifyCookie);
+  app.register(fastifySecureSession, SESSION_OPTIONS);
+  app.register(cors, CORS_OPTIONS);
 
-app.register(fastifyStatic, {
-  root: path.join(process.cwd(), "public"),
+  app.register(fastifyView, {
+    engine: { ejs },
+    root: path.join(process.cwd(), "views"),
+  });
+
+  app.register(fastifyStatic, {
+    root: path.join(process.cwd(), "public"),
+  });
 });
 
 if (import.meta.env.DEV) {
-  app.register(loggerHooks);
+  app.register((await import("@/hooks/logger")).loggerHooks);
 }
 
-app.register(cacheHooks);
-app.register(usersRoutes, { prefix: "/api/users" });
-app.register(postsRoutes, { prefix: "/api/posts" });
-app.register(youtubeRoutes, { prefix: "/api/youtube" });
-
-app.get("/", async (_req: FastifyRequest, _res: FastifyReply) => {
-  return _res.view("index");
-});
-
-app.get("/api", async (_req: FastifyRequest, _res: FastifyReply) => {
-  return _res.view("index");
-});
+// --- App routes registration ---
+app.register(appRoutes, { prefix: "/api" });
 
 app.setNotFoundHandler((_req, _res) => {
-  _req.log.warn(
-    `\x1b[35m\x1b[1m${_req.method}\x1b[39m\x1b[22m \x1b[31m${_req.url}\x1b[39m | Not Found`
-  );
+  if (import.meta.env.DEV) {
+    _req.log.warn(
+      `\x1b[35m\x1b[1m${_req.method}\x1b[39m\x1b[22m \x1b[31m${_req.url}\x1b[39m | Not Found`,
+    );
+  }
   return _res.code(404).view("404", { pathname: _req.url });
 });
 
 if (process.env.VERCEL !== "1" && import.meta.env.PROD) {
   (async () => {
+    await app.ready();
+
     app.listen(
       {
-        port: +process.env.PORT! || 3000,
+        port: app.env.PORT,
       },
       (err, address) => {
-        if (err) {
-          app.log.error(err.message);
-          process.exit(1);
-        } else {
-          console.clear();
-          console.log(
-            `\x1b[30mfastify running at\x1b[39m [\x1b[36m\x1b[1m ${address} \x1b[39m]`
-          );
-        }
-      }
+        import("vite").then((ctx) => {
+          const logger = ctx.createLogger("info", {
+            allowClearScreen: true,
+          });
+
+          if (err) {
+            logger.error(err.message, { error: err, timestamp: true });
+            process.exit(1);
+          } else {
+            logger.info(
+              `\x1b[30mfastify running at\x1b[39m [\x1b[36m\x1b[1m ${address} \x1b[39m]`,
+              // { clear: true, timestamp: true },
+            );
+          }
+        });
+      },
     );
   })();
 }

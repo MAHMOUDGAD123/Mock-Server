@@ -14,11 +14,18 @@ export const readLocalJsonFile = async (path: string) => {
 
 export const readUsers = () => {
   return readLocalJsonFile(
-    path.join(process.cwd(), "public/db/users.json")
+    path.join(process.cwd(), "public/db/users.json"),
   ) as Promise<Database.UserInfoType[]>;
 };
+
 export const readPosts = () => {
   return readLocalJsonFile(
-    path.join(process.cwd(), "public/db/posts.json")
+    path.join(process.cwd(), "public/db/posts.json"),
   ) as Promise<Database.PostInfoType[]>;
+};
+
+export const readProducts = () => {
+  return readLocalJsonFile(
+    path.join(process.cwd(), "public/db/products.json"),
+  ) as Promise<Shop.ServerProductsStore>;
 };

@@ -1,0 +1,1688 @@
+{
+  "categories": ["coffee", "equipment", "roasting"],
+  "itemCount": 20,
+  "list": [
+    {
+      "id": "prod_c_001",
+      "title": {
+        "en": "Ethiopian Yirgacheffe Grade 1",
+        "ar": "يرقاشيف إثيوبي الدرجة الأولى"
+      },
+      "shortName": {
+        "en": "Yirgacheffe Floral",
+        "ar": "يرقاشيف زهري"
+      },
+      "description": {
+        "en": "A light roast with distinct floral notes of jasmine and bright acidity. Perfect for pour-over enthusiasts.",
+        "ar": "تحميص خفيف مع نكهات زهرية واضحة من الياسمين وحموضة مشرقة. مثالي لعشاق القهوة المقطرة."
+      },
+      "price": 24,
+      "discount": 0,
+      "category": {
+        "en": "coffee",
+        "ar": "قهوة"
+      },
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": {
+            "en": "Fatima Hassan",
+            "ar": "فاطمة حسن"
+          },
+          "description": {
+            "en": "Absolutely stunning floral aroma. The best beans I've bought this year.",
+            "ar": "رائحة زهرية مذهلة تمامًا. أفضل حبوب اشتريتها هذا العام."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": {
+            "en": "Omar Khaled",
+            "ar": "عمر خالد"
+          },
+          "description": {
+            "en": "A bit too acidic for my taste, tasted almost like lemon juice. Clearly high quality, just not for me.",
+            "ar": "حامضة قليلًا أكثر من ذوقي، تكاد تشبه عصير الليمون. جودة عالية لكنها ليست مناسبة لي."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": {
+            "en": "Yousef Adel",
+            "ar": "يوسف عادل"
+          },
+          "description": {
+            "en": "Brewed this in my Chemex and the jasmine notes were incredible.",
+            "ar": "حضّرتها باستخدام كيمكس وكانت نكهات الياسمين مذهلة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": {
+            "en": "Mona Saeed",
+            "ar": "منى سعيد"
+          },
+          "description": {
+            "en": "Good beans, but slightly uneven roast compared to the last batch.",
+            "ar": "حبوب جيدة، لكن التحميص غير متساوٍ قليلًا مقارنة بالدفعة السابقة."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": {
+            "en": "Hanan Nabil",
+            "ar": "حنان نبيل"
+          },
+          "description": {
+            "en": "Very tea-like body. If you like heavy coffee, skip this. If you like complexity, buy it.",
+            "ar": "قوام يشبه الشاي جدًا. إن كنت تحب القهوة الثقيلة فتجاوزها، وإن كنت تحب التعقيد فاشترها."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": {
+            "en": "Khaled Mostafa",
+            "ar": "خالد مصطفى"
+          },
+          "description": {
+            "en": "Way too sour for my morning routine.",
+            "ar": "حامضة جدًا لروتين قهوتي الصباحي."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": {
+            "en": "Lina Ibrahim",
+            "ar": "لينا إبراهيم"
+          },
+          "description": {
+            "en": "The blueberry finish is subtle but definitely there.",
+            "ar": "نكهة التوت الأزرق في النهاية خفيفة لكنها واضحة."
+          },
+          "reviewStars": 4
+        }
+      ]
+    },
+
+    {
+      "id": "prod_c_002",
+      "title": {
+        "en": "Sumatra Mandheling Reserve",
+        "ar": "سومطرة مانديلينغ ريزيرف"
+      },
+      "shortName": {
+        "en": "Sumatra Dark",
+        "ar": "سومطرة داكنة"
+      },
+      "description": {
+        "en": "Full-bodied, earthy, and low acidity. Deep herbal notes with a smooth chocolate finish.",
+        "ar": "قوام كامل، نكهة ترابية وحموضة منخفضة. ملاحظات عشبية عميقة مع نهاية شوكولاتة ناعمة."
+      },
+      "price": 22,
+      "discount": 0.15,
+      "category": {
+        "en": "coffee",
+        "ar": "قهوة"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": {
+            "en": "Ahmed Nasser",
+            "ar": "أحمد ناصر"
+          },
+          "description": {
+            "en": "Exactly the bold, earthy flavor I was looking for.",
+            "ar": "تمامًا النكهة القوية والترابية التي كنت أبحث عنها."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": {
+            "en": "Laila Mahmoud",
+            "ar": "ليلى محمود"
+          },
+          "description": {
+            "en": "A bit too muddy for my taste, lacked clarity.",
+            "ar": "طعمها موحل قليلًا بالنسبة لي وتفتقر للوضوح."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": {
+            "en": "Tariq Fathi",
+            "ar": "طارق فتحي"
+          },
+          "description": {
+            "en": "Perfect for French Press. Thick and syrupy.",
+            "ar": "مثالية للفرنش برس. كثيفة وقوامها شرابي."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": {
+            "en": "Nour Adel",
+            "ar": "نور عادل"
+          },
+          "description": {
+            "en": "Low acid is a lifesaver for my stomach. Love it.",
+            "ar": "الحموضة المنخفضة أنقذت معدتي. أحببتها."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": {
+            "en": "Hisham Salah",
+            "ar": "هشام صلاح"
+          },
+          "description": {
+            "en": "Tasted a bit burnt rather than roasted.",
+            "ar": "طعمه أقرب للمحترق من المحمص."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": {
+            "en": "Ziad Nguyen",
+            "ar": "زياد نغوين"
+          },
+          "description": {
+            "en": "Rich dark chocolate notes, great with milk.",
+            "ar": "نكهات شوكولاتة داكنة غنية، ممتازة مع الحليب."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": {
+            "en": "Mariam Brooks",
+            "ar": "مريم بروكس"
+          },
+          "description": {
+            "en": "My go-to morning coffee. Strong and wakes you up.",
+            "ar": "قهوتي الصباحية المفضلة. قوية وتوقظك فورًا."
+          },
+          "reviewStars": 5
+        }
+      ]
+    },
+
+    {
+      "id": "prod_e_003",
+      "title": {
+        "en": "Precision Burr Grinder X1",
+        "ar": "مطحنة طحن دقيقة X1"
+      },
+      "shortName": {
+        "en": "Burr Grinder",
+        "ar": "مطحنة مخروطية"
+      },
+      "description": {
+        "en": "Stainless steel conical burrs ensure a consistent grind size for everything from Espresso to French Press.",
+        "ar": "شفرات مخروطية من الفولاذ المقاوم للصدأ تضمن حجم طحن متناسق من الإسبريسو إلى الفرنش برس."
+      },
+      "price": 145,
+      "discount": 0,
+      "category": {
+        "en": "equipment",
+        "ar": "معدات"
+      },
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": {
+            "en": "Sara Lawson",
+            "ar": "سارة لوسون"
+          },
+          "description": {
+            "en": "Grinds evenly, but the motor is a bit louder than I expected.",
+            "ar": "تطحن بشكل متساوٍ، لكن صوت المحرك أعلى قليلًا مما توقعت."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": {
+            "en": "Mohamed Reyes",
+            "ar": "محمد رييس"
+          },
+          "description": {
+            "en": "Game changer for my morning routine. Worth every penny.",
+            "ar": "غيرت روتيني الصباحي بالكامل. تستحق كل قرش."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": {
+            "en": "Bassem Kamal",
+            "ar": "باسم كمال"
+          },
+          "description": {
+            "en": "Retention is high, I have to tap it a lot to get all the grounds out.",
+            "ar": "الاحتفاظ ببقايا القهوة مرتفع، أضطر للطرق عليها كثيرًا."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": {
+            "en": "Jana Alvarez",
+            "ar": "جنى ألفاريز"
+          },
+          "description": {
+            "en": "Beautiful design on my counter and the grind consistency is top notch.",
+            "ar": "تصميم جميل على الطاولة وجودة الطحن ممتازة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": {
+            "en": "Walid Ghaly",
+            "ar": "وليد غالي"
+          },
+          "description": {
+            "en": "Stopped working after 6 months. Customer service was slow.",
+            "ar": "توقفت عن العمل بعد 6 أشهر. خدمة العملاء كانت بطيئة."
+          },
+          "reviewStars": 1
+        },
+        {
+          "customerName": {
+            "en": "Nader Hamdi",
+            "ar": "نادر حمدي"
+          },
+          "description": {
+            "en": "Great for pour over, struggles a bit with fine espresso.",
+            "ar": "ممتازة للقهوة المقطرة، لكنها تعاني قليلًا مع طحن الإسبريسو الناعم."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": {
+            "en": "Laila Mitchell",
+            "ar": "ليلى ميتشل"
+          },
+          "description": {
+            "en": "Easy to clean and assemble.",
+            "ar": "سهلة التنظيف والتركيب."
+          },
+          "reviewStars": 5
+        }
+      ]
+    },
+
+    {
+      "id": "prod_c_004",
+      "title": {
+        "en": "Colombian Supremo Huila",
+        "ar": "كولومبي سوبرمو هويلا"
+      },
+      "shortName": {
+        "en": "Colombia Nutty",
+        "ar": "كولومبيا جوزية"
+      },
+      "description": {
+        "en": "The classic breakfast coffee. Medium roast with notes of caramel, walnut, and red apple.",
+        "ar": "قهوة الإفطار الكلاسيكية. تحميص متوسط مع نكهات الكراميل والجوز والتفاح الأحمر."
+      },
+      "price": 19,
+      "discount": 0,
+      "category": {
+        "en": "coffee",
+        "ar": "قهوة"
+      },
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": { "en": "Evan Patterson", "ar": "إيفان باترسون" },
+          "description": {
+            "en": "Solid coffee, but nothing exciting. Good for daily drinking.",
+            "ar": "قهوة جيدة لكنها ليست مميزة. مناسبة للاستخدام اليومي."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Brenda Saleh", "ar": "بريندا صالح" },
+          "description": {
+            "en": "Very consistent. I buy this every month.",
+            "ar": "ثابتة جدًا في الجودة. أشتريها كل شهر."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Gary Sullivan", "ar": "غاري سوليفان" },
+          "description": {
+            "en": "Smooth, nutty, no bitter aftertaste.",
+            "ar": "ناعمة وجوزية بدون طعم مر بعدي."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Diane Latif", "ar": "ديان لطيف" },
+          "description": {
+            "en": "Bought this for the office, everyone loves it.",
+            "ar": "اشتريتها للمكتب والجميع أحبها."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Kyle Anderson", "ar": "كايل أندرسون" },
+          "description": {
+            "en": "A bit stale when it arrived.",
+            "ar": "كانت غير طازجة قليلًا عند وصولها."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Nancy Whitfield", "ar": "نانسي ويتفيلد" },
+          "description": {
+            "en": "Classic Colombian taste. Can't go wrong.",
+            "ar": "الطعم الكولومبي الكلاسيكي. اختيار مضمون."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Peter Jamal", "ar": "بيتر جمال" },
+          "description": {
+            "en": "Great price for the quality.",
+            "ar": "سعر ممتاز مقابل الجودة."
+          },
+          "reviewStars": 5
+        }
+      ]
+    },
+
+    {
+      "id": "prod_r_005",
+      "title": {
+        "en": "Raw Green Beans: Kenya AA",
+        "ar": "حبوب خضراء غير محمصة: كينيا الدرجة الأولى"
+      },
+      "shortName": {
+        "en": "Green Kenya AA",
+        "ar": "كينيا خضراء الدرجة الأولى"
+      },
+      "description": {
+        "en": "Premium unroasted green beans for home roasting enthusiasts. High density and massive flavor potential.",
+        "ar": "حبوب خضراء فاخرة غير محمصة لعشاق التحميص المنزلي. كثافة عالية وإمكانيات نكهة كبيرة."
+      },
+      "price": 15,
+      "discount": 0,
+      "category": {
+        "en": "roasting",
+        "ar": "تحميص"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": { "en": "Robert Mahmoud", "ar": "روبرت محمود" },
+          "description": {
+            "en": "Clean beans, very few defects. Roasted to a City+ and it was perfect.",
+            "ar": "حبوب نظيفة جدًا مع عيوب قليلة. حمصتها حتى سيتي بلس وكانت مثالية."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Gregory Hall", "ar": "غريغوري هول" },
+          "description": {
+            "en": "High moisture content, took a while to reach first crack.",
+            "ar": "نسبة رطوبة مرتفعة واستغرق وقتًا للوصول لأول فرقعة."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Sarah Dunham", "ar": "سارة دنهام" },
+          "description": {
+            "en": "Produced a lovely bright cup. Will buy again.",
+            "ar": "أنتجت كوبًا مشرقًا وجميلًا. سأشتريها مرة أخرى."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "David Nabil", "ar": "ديفيد نبيل" },
+          "description": {
+            "en": "Too many quakers in the bag.",
+            "ar": "عدد كبير من الحبوب غير الناضجة في الكيس."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Anthony Pasha", "ar": "أنطوني باشا" },
+          "description": {
+            "en": "Excellent size consistency.",
+            "ar": "تجانس ممتاز في حجم الحبوب."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Maria Vania", "ar": "ماريا فانيا" },
+          "description": {
+            "en": "Hard to roast evenly for a beginner, but that's on me.",
+            "ar": "صعبة التحميص بشكل متساوٍ للمبتدئين، لكن هذا خطئي."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Elizabeth Turner", "ar": "إليزابيث تيرنر" },
+          "description": {
+            "en": "Great packaging, beans stayed fresh.",
+            "ar": "تغليف ممتاز، الحبوب بقيت طازجة."
+          },
+          "reviewStars": 5
+        }
+      ]
+    },
+
+    {
+      "id": "prod_e_006",
+      "title": {
+        "en": "V60 Ceramic Dripper 02",
+        "ar": "مقطرة V60 سيراميك 02"
+      },
+      "shortName": {
+        "en": "Ceramic Dripper",
+        "ar": "مقطرة سيراميك"
+      },
+      "description": {
+        "en": "The standard for manual brewing. Spiraled ribs allows for maximum coffee expansion.",
+        "ar": "المعيار الأساسي للتحضير اليدوي. الأضلاع الحلزونية تسمح بتمدد القهوة لأقصى درجة."
+      },
+      "price": 28,
+      "discount": 0.3,
+      "category": {
+        "en": "equipment",
+        "ar": "معدات"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": { "en": "Jennifer Wang", "ar": "جينيفر وانغ" },
+          "description": {
+            "en": "Arrived chipped, had to return it. Replacement works fine.",
+            "ar": "وصلت مكسورة واضطررت لإرجاعها. البديلة تعمل بشكل جيد."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Thomas Hassan", "ar": "توماس حسن" },
+          "description": {
+            "en": "Keeps heat well, makes a clean cup.",
+            "ar": "تحافظ على الحرارة جيدًا وتنتج كوبًا نظيفًا."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Christine Daoud", "ar": "كريستين داوود" },
+          "description": {
+            "en": "Looks great on the shelf and easy to clean.",
+            "ar": "تبدو رائعة على الرف وسهلة التنظيف."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Steve Nakamura", "ar": "ستيف ناكامورا" },
+          "description": {
+            "en": "The flow rate is perfect.",
+            "ar": "معدل التدفق مثالي."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Rebecca Pasha", "ar": "ريبيكا باشا" },
+          "description": {
+            "en": "I broke it within a week. Get the plastic one if you're clumsy.",
+            "ar": "كسرتها خلال أسبوع. اختر البلاستيكية إن كنت غير حذر."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Brandon Lee", "ar": "براندون لي" },
+          "description": {
+            "en": "Essential tool for any coffee lover.",
+            "ar": "أداة أساسية لأي محب للقهوة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Karen Mitchell", "ar": "كارين ميتشل" },
+          "description": {
+            "en": "Too small for my large mug.",
+            "ar": "صغيرة جدًا لكوبي الكبير."
+          },
+          "reviewStars": 3
+        }
+      ]
+    },
+
+    {
+      "id": "prod_c_007",
+      "title": {
+        "en": "Midnight Espresso Blend",
+        "ar": "مزيج إسبريسو منتصف الليل"
+      },
+      "shortName": {
+        "en": "Espresso Blend",
+        "ar": "مزيج إسبريسو"
+      },
+      "description": {
+        "en": "A mix of Brazilian and Vietnamese beans designed for thick crema and a punchy caffeine kick.",
+        "ar": "مزيج من حبوب برازيلية وفيتنامية مصمم لإنتاج كريما كثيفة ودفعة كافيين قوية."
+      },
+      "price": 20,
+      "discount": 0.25,
+      "category": {
+        "en": "coffee",
+        "ar": "قهوة"
+      },
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": { "en": "Michele Fares", "ar": "ميشيل فارس" },
+          "description": {
+            "en": "Cuts through milk perfectly in my cappuccino.",
+            "ar": "يبرز طعمه بشكل مثالي مع الحليب في الكابتشينو."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Yousef Castellano", "ar": "يوسف كاستيلانو" },
+          "description": {
+            "en": "Great crema production, looks amazing in the cup.",
+            "ar": "إنتاج ممتاز للكريما، ويبدو رائعًا في الكوب."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Caroline Bassam", "ar": "كارولين بسام" },
+          "description": {
+            "en": "A little too bitter for a straight shot.",
+            "ar": "مر قليلًا عند شربه بدون إضافات."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Derek Waleed", "ar": "ديريك وليد" },
+          "description": {
+            "en": "This stuff is strong! Love the caffeine kick.",
+            "ar": "قوي جدًا! أحب دفعة الكافيين."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Sasha Petrova", "ar": "ساشا بيتروفا" },
+          "description": {
+            "en": "Good value blend.",
+            "ar": "مزيج بقيمة جيدة."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Jonathan Rami", "ar": "جوناثان رامي" },
+          "description": {
+            "en": "Lacks nuance, it's just a punch in the face.",
+            "ar": "يفتقر للتعقيد، مجرد صدمة قوية."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Heather Simmons", "ar": "هيذر سيمونز" },
+          "description": {
+            "en": "Easy to dial in on my machine.",
+            "ar": "سهل الضبط على جهازي."
+          },
+          "reviewStars": 4
+        }
+      ]
+    },
+
+    {
+      "id": "prod_e_008",
+      "title": {
+        "en": "Gooseneck Variable Kettle",
+        "ar": "غلاية عنق الإوزة متغيرة الحرارة"
+      },
+      "shortName": {
+        "en": "Digital Kettle",
+        "ar": "غلاية رقمية"
+      },
+      "description": {
+        "en": "Precise temperature control and a thin spout for exact pouring control.",
+        "ar": "تحكم دقيق في درجة الحرارة وفوهة رفيعة لتحكم مثالي في السكب."
+      },
+      "price": 85,
+      "discount": 0,
+      "category": {
+        "en": "equipment",
+        "ar": "معدات"
+      },
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": { "en": "Marco Espinoza", "ar": "ماركو إسبينوزا" },
+          "description": {
+            "en": "Heats up fast and holds temp perfectly.",
+            "ar": "تسخن بسرعة وتحافظ على الحرارة بشكل ممتاز."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "James Omar", "ar": "جيمس عمر" },
+          "description": {
+            "en": "Buttons feel a bit cheap.",
+            "ar": "الأزرار تبدو رخيصة قليلًا."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Andrew Kim", "ar": "أندرو كيم" },
+          "description": {
+            "en": "The flow control is unmatched.",
+            "ar": "التحكم في تدفق الماء لا مثيل له."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Linda Cheng", "ar": "ليندا تشينغ" },
+          "description": {
+            "en": "Also great for tea since you can set lower temps.",
+            "ar": "ممتازة أيضًا للشاي حيث يمكن ضبط درجات حرارة أقل."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Richard Mansour", "ar": "ريتشارد منصور" },
+          "description": {
+            "en": "Display died after a month.",
+            "ar": "الشاشة تعطلت بعد شهر."
+          },
+          "reviewStars": 1
+        },
+        {
+          "customerName": { "en": "Olivia Barnes", "ar": "أوليفيا بارنز" },
+          "description": {
+            "en": "Looks sleek in matte black.",
+            "ar": "تبدو أنيقة باللون الأسود المطفي."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Timothy Grant", "ar": "تيموثي غرانت" },
+          "description": {
+            "en": "Takes a while to boil if filled to max.",
+            "ar": "تستغرق وقتًا أطول للغليان عند ملئها بالكامل."
+          },
+          "reviewStars": 3
+        }
+      ]
+    },
+
+    {
+      "id": "prod_r_009",
+      "title": {
+        "en": "Home Drum Roaster Kit",
+        "ar": "طقم محمصة أسطوانية منزلية"
+      },
+      "shortName": {
+        "en": "Drum Roaster",
+        "ar": "محمصة أسطوانية"
+      },
+      "description": {
+        "en": "An entry-level motorized drum roaster for stovetops. Roasts up to 300g at a time.",
+        "ar": "محمصة أسطوانية بمحرك للمبتدئين للاستخدام على المواقد. تحمص حتى 300 غرام في المرة الواحدة."
+      },
+      "price": 250,
+      "discount": 0.4,
+      "category": {
+        "en": "roasting",
+        "ar": "تحميص"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": { "en": "David Collins", "ar": "ديفيد كولينز" },
+          "description": {
+            "en": "Hard to control the heat, burned my first two batches.",
+            "ar": "صعب التحكم بالحرارة، أحرقت أول دفعتين."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Raymond Taha", "ar": "ريموند طه" },
+          "description": {
+            "en": "Fun project, but requires patience.",
+            "ar": "مشروع ممتع لكنه يتطلب صبرًا."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "George Morales", "ar": "جورج موراليس" },
+          "description": {
+            "en": "Good for learning, but you will outgrow it fast.",
+            "ar": "جيد للتعلم، لكنك ستتجاوزه بسرعة."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Sandra Kamal", "ar": "ساندرا كمال" },
+          "description": {
+            "en": "Once you get the hang of it, the results are great.",
+            "ar": "عندما تتقنه، تكون النتائج رائعة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Frank Deluca", "ar": "فرانك ديلوكا" },
+          "description": {
+            "en": "The motor is a bit weak for a full 300g load.",
+            "ar": "المحرك ضعيف قليلًا عند تحميل 300 غرام كاملة."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Melissa Yara", "ar": "ميليسا يارا" },
+          "description": {
+            "en": "Best option for this price range.",
+            "ar": "أفضل خيار ضمن هذه الفئة السعرية."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Paul Henderson", "ar": "بول هندرسون" },
+          "description": {
+            "en": "Smokes up the kitchen, use good ventilation!",
+            "ar": "يملأ المطبخ بالدخان، استخدم تهوية جيدة!"
+          },
+          "reviewStars": 4
+        }
+      ]
+    },
+
+    {
+      "id": "prod_c_010",
+      "title": {
+        "en": "Costa Rica Tarrazu",
+        "ar": "كوستاريكا تارازو"
+      },
+      "shortName": {
+        "en": "Tarrazu Honey",
+        "ar": "تارازو هاني"
+      },
+      "description": {
+        "en": "Honey processed beans yielding a sweet, complex body with hints of brown sugar.",
+        "ar": "حبوب معالجة بطريقة العسل تنتج قوامًا حلوًا ومعقدًا مع لمحات من السكر البني."
+      },
+      "price": 26,
+      "discount": 0,
+      "category": {
+        "en": "coffee",
+        "ar": "قهوة"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": { "en": "Amal Farid", "ar": "أمل فريد" },
+          "description": {
+            "en": "Incredibly sweet even without sugar. My favorite.",
+            "ar": "حلوة بشكل مذهل حتى بدون سكر. المفضلة لدي."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Donia Jamal", "ar": "دنيا جمال" },
+          "description": {
+            "en": "Very balanced cup.",
+            "ar": "كوب متوازن جدًا."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Basem Samir", "ar": "باسم سمير" },
+          "description": {
+            "en": "Smooth and gentle on the stomach.",
+            "ar": "ناعمة ولطيفة على المعدة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Ehab Nabil", "ar": "إيهاب نبيل" },
+          "description": {
+            "en": "It was okay, expected more complexity.",
+            "ar": "كانت مقبولة، توقعت تعقيدًا أكبر."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Christina Lopez", "ar": "كريستينا لوبيز" },
+          "description": {
+            "en": "Love the processing method, unique flavor.",
+            "ar": "أحب طريقة المعالجة، نكهة فريدة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Rania Adams", "ar": "رانيا آدامز" },
+          "description": {
+            "en": "Packaging is beautiful, makes a great gift.",
+            "ar": "التغليف جميل جدًا ومناسب كهدية."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Vincent Rami", "ar": "فينسنت رامي" },
+          "description": {
+            "en": "Overpriced for what it is.",
+            "ar": "سعرها مرتفع مقارنة بما تقدمه."
+          },
+          "reviewStars": 2
+        }
+      ]
+    },
+
+    {
+      "id": "prod_e_011",
+      "title": {
+        "en": "Classic French Press",
+        "ar": "فرنش برس كلاسيك"
+      },
+      "shortName": {
+        "en": "Glass Press",
+        "ar": "فرنش برس زجاجي"
+      },
+      "description": {
+        "en": "Heat-resistant borosilicate glass with a triple-screen filter system.",
+        "ar": "زجاج بوروسيليكات مقاوم للحرارة مع نظام ترشيح ثلاثي."
+      },
+      "price": 35,
+      "discount": 0.5,
+      "category": {
+        "en": "equipment",
+        "ar": "معدات"
+      },
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": { "en": "Harith Waleed", "ar": "حارث وليد" },
+          "description": {
+            "en": "Simple, effective, and easy to clean.",
+            "ar": "بسيط وفعال وسهل التنظيف."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Safaa Moore", "ar": "صفاء مور" },
+          "description": {
+            "en": "Glass is very thin, broke in the sink.",
+            "ar": "الزجاج رقيق جدًا وانكسر في المغسلة."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Marwan Garcia", "ar": "مروان غارسيا" },
+          "description": {
+            "en": "The triple filter really keeps the sludge out.",
+            "ar": "الفلتر الثلاثي يمنع الرواسب بشكل ممتاز."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Carla Farouk", "ar": "كارلا فاروق" },
+          "description": {
+            "en": "Makes the best full-bodied coffee.",
+            "ar": "تحضر قهوة غنية القوام بشكل رائع."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Alya Hisham", "ar": "عالية هشام" },
+          "description": {
+            "en": "Dishwasher safe, which is a huge plus.",
+            "ar": "آمنة للغسالة، وهذه ميزة كبيرة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Ryan Mansour", "ar": "ريان منصور" },
+          "description": {
+            "en": "I prefer stainless steel, keeps coffee hotter.",
+            "ar": "أفضل الستانلس ستيل لأنه يحافظ على الحرارة أكثر."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Justin Pasha", "ar": "جاستن باشا" },
+          "description": {
+            "en": "Cheap and does the job.",
+            "ar": "رخيص ويؤدي الغرض."
+          },
+          "reviewStars": 4
+        }
+      ]
+    },
+
+    {
+      "id": "prod_c_012",
+      "title": {
+        "en": "Decaf Mountain Water Process",
+        "ar": "قهوة منزوعة الكافيين بطريقة المياه الجبلية"
+      },
+      "shortName": {
+        "en": "Decaf Mexico",
+        "ar": "ديكاف مكسيك"
+      },
+      "description": {
+        "en": "Chemical-free decaffeination. Notes of cinnamon and chocolate. You won't believe it's decaf.",
+        "ar": "نزع كافيين بدون مواد كيميائية. نكهات القرفة والشوكولاتة. لن تصدق أنها منزوعة الكافيين."
+      },
+      "price": 21,
+      "discount": 0,
+      "category": {
+        "en": "coffee",
+        "ar": "قهوة"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": { "en": "Denise Wafaa", "ar": "دينيس وفاء" },
+          "description": {
+            "en": "Finally a decaf that doesn't taste like cardboard!",
+            "ar": "أخيرًا قهوة منزوعة الكافيين لا طعم لها مثل الكرتون!"
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Khadija Latif", "ar": "خديجة لطيف" },
+          "description": {
+            "en": "I can drink this at 9pm and sleep like a baby.",
+            "ar": "أستطيع شربها الساعة 9 مساءً وأنام بسهولة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Bashar Shaw", "ar": "بشار شو" },
+          "description": {
+            "en": "A bit weak compared to regular beans, but good.",
+            "ar": "أضعف قليلًا من القهوة العادية، لكنها جيدة."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Stanley Tarek", "ar": "ستانلي طارق" },
+          "description": {
+            "en": "Still has that weird decaf aftertaste.",
+            "ar": "لا يزال بها طعم الديكاف الغريب."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Nour Brennan", "ar": "نور برينان" },
+          "description": {
+            "en": "Saved my life during pregnancy.",
+            "ar": "أنقذتني خلال فترة الحمل."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Chris Daoud", "ar": "كريس داوود" },
+          "description": {
+            "en": "Excellent chocolate notes.",
+            "ar": "نكهات شوكولاتة ممتازة."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Samar Rami", "ar": "سمر رامي" },
+          "description": {
+            "en": "My guests didn't know it was decaf.",
+            "ar": "ضيوفي لم يعرفوا أنها منزوعة الكافيين."
+          },
+          "reviewStars": 5
+        }
+      ]
+    },
+
+    {
+      "id": "prod_r_013",
+      "title": {
+        "en": "Raw Green Beans: Brazil Santos",
+        "ar": "حبوب خضراء غير محمصة: البرازيل سانتوس"
+      },
+      "shortName": {
+        "en": "Green Santos",
+        "ar": "سانتوس خضراء"
+      },
+      "description": {
+        "en": "A forgiving bean for beginner roasters. Naturally low acidity and nutty flavor profile.",
+        "ar": "حبوب متسامحة للمحمصين المبتدئين. حموضة منخفضة طبيعيًا ونكهة جوزية."
+      },
+      "price": 12,
+      "discount": 0.2,
+      "category": {
+        "en": "roasting",
+        "ar": "تحميص"
+      },
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": { "en": "Jason Morris", "ar": "جيسون موريس" },
+          "description": {
+            "en": "Great price for practicing. Hard to mess this one up.",
+            "ar": "سعر ممتاز للتدريب. من الصعب إفسادها."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Douglas Adel", "ar": "دوغلاس عادل" },
+          "description": {
+            "en": "Very nutty flavor, great for blending.",
+            "ar": "نكهة جوزية واضحة، ممتازة للخلط."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Phillip Carlson", "ar": "فيليب كارلسون" },
+          "description": {
+            "en": "A bit boring on its own, needs to be blended.",
+            "ar": "مملة قليلًا بمفردها، تحتاج إلى خلط."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Virginia Hala", "ar": "فيرجينيا هالة" },
+          "description": {
+            "en": "I buy this in bulk, consistent quality.",
+            "ar": "أشتريها بكميات كبيرة، جودة ثابتة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Craig Peterson", "ar": "كريغ بيترسون" },
+          "description": {
+            "en": "Produces a lot of chaff during roasting.",
+            "ar": "تنتج الكثير من القشور أثناء التحميص."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Deborah Santiago", "ar": "ديبورا سانتياغو" },
+          "description": {
+            "en": "Takes a dark roast very well.",
+            "ar": "تتحمل التحميص الداكن بشكل ممتاز."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Scott Bassem", "ar": "سكوت باسم" },
+          "description": {
+            "en": "Unbeatable value.",
+            "ar": "قيمة لا تُضاهى."
+          },
+          "reviewStars": 5
+        }
+      ]
+    },
+
+    {
+      "id": "prod_c_014",
+      "title": {
+        "en": "Guatemala Antigua Volcanic",
+        "ar": "غواتيمالا أنتيغوا البركانية"
+      },
+      "shortName": {
+        "en": "Antigua Smoky",
+        "ar": "أنتيغوا مدخنة"
+      },
+      "description": {
+        "en": "Grown in volcanic soil, this coffee has a spicy, smoky character with a heavy body.",
+        "ar": "مزروعة في تربة بركانية، تتميز هذه القهوة بطابع حار ومدخن مع قوام ثقيل."
+      },
+      "price": 23,
+      "discount": 0,
+      "category": {
+        "en": "coffee",
+        "ar": "قهوة"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": { "en": "Russell Faris", "ar": "راسل فارس" },
+          "description": {
+            "en": "Rich and spicy. A wonderful afternoon cup.",
+            "ar": "غنية وحارة. كوب رائع لفترة بعد الظهر."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Monica Jensen", "ar": "مونيكا ينسن" },
+          "description": {
+            "en": "The smoky flavor is distinct and delicious.",
+            "ar": "النكهة المدخنة واضحة ولذيذة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Melanie Kamal", "ar": "ميلاني كمال" },
+          "description": {
+            "en": "Too intense for me.",
+            "ar": "قوية جدًا بالنسبة لي."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Andre Latif", "ar": "أندريه لطيف" },
+          "description": {
+            "en": "Pairs perfectly with a chocolate dessert.",
+            "ar": "تتناسب بشكل مثالي مع حلويات الشوكولاتة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Gloria Ramirez", "ar": "غلوريا راميريز" },
+          "description": {
+            "en": "Authentic Antigua flavor.",
+            "ar": "نكهة أنتيغوا أصلية."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Kenneth Walid", "ar": "كينيث وليد" },
+          "description": {
+            "en": "Bag ripped during shipping.",
+            "ar": "الكيس تمزق أثناء الشحن."
+          },
+          "reviewStars": 1
+        },
+        {
+          "customerName": { "en": "Janet Cooper", "ar": "جانيت كوبر" },
+          "description": {
+            "en": "Good body, low acid.",
+            "ar": "قوام جيد وحموضة منخفضة."
+          },
+          "reviewStars": 4
+        }
+      ]
+    },
+
+    {
+      "id": "prod_e_015",
+      "title": {
+        "en": "Digital Coffee Scale",
+        "ar": "ميزان قهوة رقمي"
+      },
+      "shortName": {
+        "en": "Precision Scale",
+        "ar": "ميزان دقيق"
+      },
+      "description": {
+        "en": "Measures down to 0.1g with a built-in timer for pour-over accuracy.",
+        "ar": "يقيس حتى 0.1 غرام مع مؤقت مدمج لدقة التحضير المقطر."
+      },
+      "price": 45,
+      "discount": 0.3,
+      "category": {
+        "en": "equipment",
+        "ar": "معدات"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": { "en": "Alex Tarek", "ar": "أليكس طارق" },
+          "description": {
+            "en": "Display is dim and hard to read in sunlight.",
+            "ar": "الشاشة خافتة وصعبة القراءة تحت ضوء الشمس."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Steven Diaa", "ar": "ستيفن ضياء" },
+          "description": {
+            "en": "Accurate enough for the price.",
+            "ar": "دقيق بما يكفي مقابل السعر."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Teresa Mounir", "ar": "تيريزا منير" },
+          "description": {
+            "en": "There is a delay in the weight reading, annoying for espresso.",
+            "ar": "هناك تأخير في قراءة الوزن، مزعج للإسبريسو."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Jonathan Hart", "ar": "جوناثان هارت" },
+          "description": {
+            "en": "Love the built-in timer function.",
+            "ar": "أحب وظيفة المؤقت المدمج."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Diana Kamal", "ar": "ديانا كمال" },
+          "description": {
+            "en": "Eats batteries like crazy.",
+            "ar": "تستهلك البطاريات بشكل كبير."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Aaron Burke", "ar": "آرون بورك" },
+          "description": {
+            "en": "Good starter scale.",
+            "ar": "ميزان جيد للمبتدئين."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Natalie Ross", "ar": "ناتالي روس" },
+          "description": {
+            "en": "Not waterproof, be careful!",
+            "ar": "غير مقاوم للماء، انتبه!"
+          },
+          "reviewStars": 3
+        }
+      ]
+    },
+
+    {
+      "id": "prod_c_016",
+      "title": {
+        "en": "Cold Brew Coarse Blend",
+        "ar": "مزيج القهوة الباردة الخشن"
+      },
+      "shortName": {
+        "en": "Cold Brew",
+        "ar": "قهوة باردة"
+      },
+      "description": {
+        "en": "Pre-ground coarse blend specifically roasted to be steeped cold for 24 hours.",
+        "ar": "مزيج مطحون خشنًا ومحمص خصيصًا للنقع البارد لمدة 24 ساعة."
+      },
+      "price": 18,
+      "discount": 0,
+      "category": {
+        "en": "coffee",
+        "ar": "قهوة"
+      },
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": { "en": "Brittany Cole", "ar": "بريتاني كول" },
+          "description": {
+            "en": "Makes a super smooth concentrate.",
+            "ar": "ينتج مركز قهوة ناعم جدًا."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Derek Palmer", "ar": "ديريك بالمر" },
+          "description": {
+            "en": "Love that it comes pre-ground coarse. Saves me time.",
+            "ar": "أحب أنها تأتي مطحونة خشنًا مسبقًا، توفر عليّ الوقت."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Courtney Laila", "ar": "كورتني ليلى" },
+          "description": {
+            "en": "Chocolatey and zero bitterness.",
+            "ar": "شوكولاتية وبدون أي مرارة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Patrick Flynn", "ar": "باتريك فلين" },
+          "description": {
+            "en": "I prefer grinding my own beans fresh.",
+            "ar": "أفضل طحن الحبوب بنفسي طازجة."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Ashley Martinez", "ar": "آشلي مارتينيز" },
+          "description": {
+            "en": "Add some oat milk and it's heaven.",
+            "ar": "أضف قليلًا من حليب الشوفان وستصبح رائعة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Ronald Gamal", "ar": "رونالد جمال" },
+          "description": {
+            "en": "Wish it came in larger bags.",
+            "ar": "أتمنى لو كانت تأتي بأكياس أكبر."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Cynthia Howard", "ar": "سينثيا هوارد" },
+          "description": {
+            "en": "Found it a bit bitter, maybe I steeped too long.",
+            "ar": "وجدتها مرة قليلًا، ربما نقعتها مدة أطول من اللازم."
+          },
+          "reviewStars": 3
+        }
+      ]
+    },
+
+    {
+      "id": "prod_r_017",
+      "title": {
+        "en": "Infrared Thermometer Gun",
+        "ar": "ميزان حرارة بالأشعة تحت الحمراء"
+      },
+      "shortName": {
+        "en": "Temp Gun",
+        "ar": "مسدس حرارة"
+      },
+      "description": {
+        "en": "Essential for checking bean temperature during the roasting process.",
+        "ar": "أداة أساسية لقياس حرارة الحبوب أثناء عملية التحميص."
+      },
+      "price": 30,
+      "discount": 0,
+      "category": {
+        "en": "roasting",
+        "ar": "تحميص"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": { "en": "Wayne Schultz", "ar": "واين شولتز" },
+          "description": {
+            "en": "Works instantly. Very helpful.",
+            "ar": "يعمل فورًا ومفيد جدًا."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Carla Pasha", "ar": "كارلا باشا" },
+          "description": {
+            "en": "Seems to be off by a few degrees compared to my probe.",
+            "ar": "يبدو أن قراءته تختلف بعدة درجات مقارنة بالمسبار."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Nicholas Stone", "ar": "نيكولاس ستون" },
+          "description": {
+            "en": "I use this for my pizza oven too!",
+            "ar": "أستخدمه أيضًا لفرن البيتزا!"
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Gerald Tarek", "ar": "جيرالد طارق" },
+          "description": {
+            "en": "Feels plasticky but works.",
+            "ar": "يشعر بأنه بلاستيكي لكنه يعمل."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Vanessa Cruz", "ar": "فانيسا كروز" },
+          "description": {
+            "en": "Laser pointer helps aim.",
+            "ar": "مؤشر الليزر يساعد على التوجيه."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Arthur Kamal", "ar": "آرثر كمال" },
+          "description": {
+            "en": "Arrived with a cracked screen.",
+            "ar": "وصلت بشاشة متشققة."
+          },
+          "reviewStars": 1
+        },
+        {
+          "customerName": { "en": "Leslie Morgan", "ar": "ليزلي مورغان" },
+          "description": {
+            "en": "Instant readings, good response time.",
+            "ar": "قراءات فورية واستجابة جيدة."
+          },
+          "reviewStars": 4
+        }
+      ]
+    },
+
+    {
+      "id": "prod_c_018",
+      "title": {
+        "en": "Blue Mountain Style Blend",
+        "ar": "مزيج بنمط بلو ماونتن"
+      },
+      "shortName": {
+        "en": "Blue Mtn Style",
+        "ar": "نمط بلو ماونتن"
+      },
+      "description": {
+        "en": "A recreation of the famous Jamaica Blue Mountain flavor profile at a fraction of the cost.",
+        "ar": "إعادة ابتكار لنكهة جامايكا بلو ماونتن الشهيرة بجزء بسيط من التكلفة."
+      },
+      "price": 35,
+      "discount": 0,
+      "category": {
+        "en": "coffee",
+        "ar": "قهوة"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": { "en": "Charles Whitman", "ar": "تشارلز ويتمان" },
+          "description": {
+            "en": "Good attempt, but lacks the true silkiness of the real thing.",
+            "ar": "محاولة جيدة لكنها تفتقر إلى النعومة الحقيقية للأصل."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Tiffany Noura", "ar": "تيفاني نورة" },
+          "description": {
+            "en": "For the price, this is an amazing cup of coffee.",
+            "ar": "مقابل السعر، هذا كوب قهوة رائع."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Lawrence Jamal", "ar": "لورنس جمال" },
+          "description": {
+            "en": "Close enough to bring back memories of my trip.",
+            "ar": "قريبة بما يكفي لإعادة ذكريات رحلتي."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Irene Blake", "ar": "إيرين بلايك" },
+          "description": {
+            "en": "Just marketing hype. It's a standard mild blend.",
+            "ar": "مجرد دعاية تسويقية. مزيج عادي بطعم خفيف."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Oscar Fernandez", "ar": "أوسكار فرنانديز" },
+          "description": {
+            "en": "Very smooth, zero bite.",
+            "ar": "ناعمة جدًا وبدون حدّة."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Hannah Young", "ar": "هانا يونغ" },
+          "description": {
+            "en": "Got this as a gift, loved it.",
+            "ar": "حصلت عليها كهدية وأحببتها."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Matthew Saleh", "ar": "ماثيو صالح" },
+          "description": {
+            "en": "Tasty but expensive.",
+            "ar": "لذيذة لكنها غالية."
+          },
+          "reviewStars": 4
+        }
+      ]
+    },
+
+    {
+      "id": "prod_e_019",
+      "title": {
+        "en": "AeroPress Coffee Maker",
+        "ar": "أداة تحضير القهوة إيروبريس"
+      },
+      "shortName": {
+        "en": "Travel Brewer",
+        "ar": "محضّر قهوة للسفر"
+      },
+      "description": {
+        "en": "The ultimate travel coffee maker. Indestructible, fast, and makes a very clean cup.",
+        "ar": "أداة تحضير القهوة المثالية للسفر. متينة جدًا، سريعة، وتنتج كوبًا نظيفًا للغاية."
+      },
+      "price": 40,
+      "discount": 0,
+      "category": {
+        "en": "equipment",
+        "ar": "معدات"
+      },
+      "isBestSeller": true,
+      "reviews": [
+        {
+          "customerName": { "en": "Victor Oduya", "ar": "فيكتور أودويا" },
+          "description": {
+            "en": "I take this camping everywhere. Best invention ever.",
+            "ar": "آخذها معي في كل رحلة تخييم. أفضل اختراع على الإطلاق."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Eugene Rashid", "ar": "يوجين رشيد" },
+          "description": {
+            "en": "It doesn't make real espresso, but the coffee is strong.",
+            "ar": "لا تصنع إسبريسو حقيقي، لكن القهوة قوية."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Catherine Daoud", "ar": "كاثرين داوود" },
+          "description": {
+            "en": "Too many parts to keep track of.",
+            "ar": "عدد القطع كبير ويصعب تتبعها."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Janice Perry", "ar": "جانيس بيري" },
+          "description": {
+            "en": "Makes the cleanest cup of coffee I've ever had.",
+            "ar": "تحضر أنظف كوب قهوة شربته في حياتي."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Henry Cho", "ar": "هنري تشو" },
+          "description": {
+            "en": "Use the inverted method for best results!",
+            "ar": "استخدم الطريقة المقلوبة للحصول على أفضل نتيجة!"
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Louise Amina", "ar": "لويز أمينة" },
+          "description": {
+            "en": "Don't like brewing in plastic.",
+            "ar": "لا أحب التحضير باستخدام البلاستيك."
+          },
+          "reviewStars": 2
+        },
+        {
+          "customerName": { "en": "Sean OBrien", "ar": "شون أوبراين" },
+          "description": {
+            "en": "Fastest way to make a single cup.",
+            "ar": "أسرع طريقة لتحضير كوب واحد."
+          },
+          "reviewStars": 5
+        }
+      ]
+    },
+
+    {
+      "id": "prod_c_020",
+      "title": {
+        "en": "Monsoon Malabar",
+        "ar": "مونسون مالابار"
+      },
+      "shortName": {
+        "en": "Malabar India",
+        "ar": "مالابار الهند"
+      },
+      "description": {
+        "en": "Exposed to monsoon rains and winds, resulting in a low-acid, heavy-bodied, unique spicy flavor.",
+        "ar": "تتعرض لرياح وأمطار الموسمية، مما ينتج قهوة منخفضة الحموضة، ثقيلة القوام، بنكهة حارة فريدة."
+      },
+      "price": 24,
+      "discount": 0,
+      "category": {
+        "en": "coffee",
+        "ar": "قهوة"
+      },
+      "isBestSeller": false,
+      "reviews": [
+        {
+          "customerName": { "en": "Gregory Patel", "ar": "غريغوري باتيل" },
+          "description": {
+            "en": "Very unique taste. A bit musty, but in a good way.",
+            "ar": "طعم فريد جدًا. فيه لمسة عتيقة لكنها محببة."
+          },
+          "reviewStars": 4
+        },
+        {
+          "customerName": { "en": "Sharon Eman", "ar": "شارون إيمان" },
+          "description": {
+            "en": "Tastes like old socks. Not for me.",
+            "ar": "طعمها يشبه الجوارب القديمة. ليست لي."
+          },
+          "reviewStars": 1
+        },
+        {
+          "customerName": { "en": "Howard Singh", "ar": "هاورد سينغ" },
+          "description": {
+            "en": "Love the spicy notes, very different from African coffees.",
+            "ar": "أحب النكهات الحارة، مختلفة جدًا عن القهوة الإفريقية."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Donna Campbell", "ar": "دونا كامبل" },
+          "description": {
+            "en": "The lowest acidity coffee I've ever found.",
+            "ar": "أقل قهوة حموضة جربتها على الإطلاق."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Ricardo Mendes", "ar": "ريكاردو مينديز" },
+          "description": {
+            "en": "Produces amazing crema in espresso blends.",
+            "ar": "تنتج كريما رائعة في خلطات الإسبريسو."
+          },
+          "reviewStars": 5
+        },
+        {
+          "customerName": { "en": "Pamela Jacobs", "ar": "باميلا جاكوبس" },
+          "description": {
+            "en": "Interesting to try once, but wouldn't drink daily.",
+            "ar": "ممتعة للتجربة مرة واحدة، لكن لا أشربها يوميًا."
+          },
+          "reviewStars": 3
+        },
+        {
+          "customerName": { "en": "Norman Fischer", "ar": "نورمان فيشر" },
+          "description": {
+            "en": "Reminds me of coffee I had in Europe.",
+            "ar": "تذكرني بالقهوة التي شربتها في أوروبا."
+          },
+          "reviewStars": 4
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 declare namespace NodeJS {
   interface ProcessEnv {
     NODE_ENV: "development" | "production" | "test";
+    SESSION_SECRET: string;
     PORT?: string;
     VERCEL?: "1"; // will be "1" when running on Vercel
     VERCEL_ENV?: "development" | "preview" | "production";

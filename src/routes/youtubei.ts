@@ -1,15 +1,19 @@
 import type { FastifyInstance } from "fastify";
+import { cacheHooks } from "@/hooks/cache";
 import { Innertube } from "youtubei.js";
 import ytpl from "@distube/ytpl";
 
 export const youtubeRoutes = async (app: FastifyInstance) => {
+  app.register(cacheHooks);
+
   app.get<{
     Querystring: { videoID: string };
   }>(
     "/youtubei",
     {
       config: {
-        cacheKey: "[videoID]",
+        cacheKey: "yt/[videoID]",
+        cacheTTL: 60 * 1000,
         dynamic: true,
         dynamicCacheProps: [["videoID", "query.videoID"]],
       },
@@ -17,9 +21,9 @@ export const youtubeRoutes = async (app: FastifyInstance) => {
     async (_req, _res) => {
       const videoID = _req.query.videoID;
       const youtube = await Innertube.create();
-      const videoData = await youtube.getBasicInfo(videoID);
+      const videoData = await youtube.getStreamingData(videoID);
       return _res.send(videoData);
-    }
+    },
   );
 
   app.get<{
@@ -28,7 +32,8 @@ export const youtubeRoutes = async (app: FastifyInstance) => {
     "/ytpl",
     {
       config: {
-        cacheKey: "[listUrl]",
+        cacheKey: "yt/[listUrl]",
+        cacheTTL: 60 * 1000,
         dynamic: true,
         dynamicCacheProps: [["listUrl", "query.listUrl"]],
       },
@@ -37,6 +42,6 @@ export const youtubeRoutes = async (app: FastifyInstance) => {
       const { listUrl } = _req.query;
       const data = await ytpl(listUrl);
       return _res.send(data);
-    }
+    },
   );
 };
