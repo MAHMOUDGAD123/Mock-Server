@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf ./api/index.js",
-    "start": "bun run ./api/index.js",
-    "dev": "bun --bun vite",
-    "vite-build": "bun --bun vite build",
+    "start": "node ./api/index.js",
+    "dev": "vite",
+    "vite-build": "vite build",
     "vercel-build": "echo vercel building ⚡..."
   },
   "author": "MG",
@@ -44,5 +44,5 @@
     "vite-plugin-node": "^7.0.0",
     "vite-tsconfig-paths": "^5.1.4"
   },
-  "packageManager": "bun@1.4.0"
+  "packageManager": "pnpm@11.25.0"
 }
