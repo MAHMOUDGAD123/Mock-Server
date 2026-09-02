@@ -13,6 +13,7 @@
   },
   "author": "MG",
   "license": "ISC",
+  "packageManager": "bun@1.0.0",
   "dependencies": {
     "@distube/ytpl": "^1.2.4",
     "@fastify/cookie": "^11.1.2",
