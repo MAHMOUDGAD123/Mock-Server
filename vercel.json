@@ -5,6 +5,5 @@
       "includeFiles": "{views/**,public/**}"
     }
   },
-  "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
-  "bunVersion": "1.x"
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }
