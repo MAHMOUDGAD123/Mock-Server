@@ -44,5 +44,5 @@
     "vite-plugin-node": "^7.0.0",
     "vite-tsconfig-paths": "^5.1.4"
   },
-  "packageManager": "pnpm@11.24.0"
+  "packageManager": "bun@1.4.0"
 }
