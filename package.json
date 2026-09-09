@@ -5,10 +5,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "rimraf ./api/index.js",
-    "start": "node ./api/index.js",
-    "dev": "vite",
-    "vite-build": "vite build",
+    "clean": "bun --bun rimraf ./api/index.js",
+    "start": "bun run ./api/index.js",
+    "dev": "bun --bun vite",
+    "vite-build": "bun --bun vite build",
     "vercel-build": "echo vercel building ⚡..."
   },
   "author": "MG",
@@ -43,6 +43,5 @@
     "vite": "^7.3.6",
     "vite-plugin-node": "^7.0.0",
     "vite-tsconfig-paths": "^5.1.4"
-  },
-  "packageManager": "pnpm@11.25.0"
+  }
 }

@@ -1,3 +1,6 @@
+declare module "*.html";
+declare module "*.css";
+
 declare namespace Globals {
   type EnvironmentMode = "development" | "production";
 
