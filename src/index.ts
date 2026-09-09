@@ -65,7 +65,7 @@ app.setNotFoundHandler((_req, _res) => {
   return _res.code(404).view("404", { pathname: _req.url });
 });
 
-if (process.env.VERCEL !== "1" && import.meta.env.PROD) {
+if (import.meta.env.PROD) {
   (async () => {
     await app.ready();
 
