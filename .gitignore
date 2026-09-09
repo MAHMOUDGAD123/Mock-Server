@@ -24,3 +24,6 @@ dist-ssr
 
 .vercel
 .env
+
+bun.lock
+bun.lockb
