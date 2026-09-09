@@ -23,10 +23,10 @@ export default defineConfig(
         minifyIdentifiers: true,
         minifySyntax: true,
         minifyWhitespace: true,
-        drop:
-          (config.mode as Globals.EnvironmentMode) === "development"
-            ? []
-            : ["console"],
+        // drop:
+        //   (config.mode as Globals.EnvironmentMode) === "development"
+        //     ? []
+        //     : ["console"],
       },
       build: {
         minify: "esbuild",
